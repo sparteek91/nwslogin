@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25.183" viewBox="0 0 25 25.183">
+    <defs>
+        <style>
+            .prefix__cls-1{fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round}
+        </style>
+    </defs>
+    <g id="prefix__Group_159" data-name="Group 159" transform="translate(-1120.049 -81.252)">
+        <path id="prefix__Path_277" d="M1120.549 87.64l10.376 6.033 10.087-6.033-10.231-5.888z" class="prefix__cls-1" data-name="Path 277"/>
+        <path id="prefix__Path_278" d="M1167.286 137.309l-5.653 3.387v-11.951" class="prefix__cls-1" data-name="Path 278" transform="translate(-30.662 -34.945)"/>
+        <path id="prefix__Line_2" d="M0 0L0 6.211" class="prefix__cls-1" data-name="Line 2" transform="translate(1141.012 87.682)"/>
+        <path id="prefix__Path_279" d="M1120.549 104.963v11.969l10.422 6.015" class="prefix__cls-1" data-name="Path 279" transform="translate(0 -17.195)"/>
+        <path id="prefix__Path_280" d="M1143.651 89.367L1133.3 95.2v4.346l2.931 1.7V96.9l10.355-5.836" class="prefix__cls-1" data-name="Path 280" transform="translate(-9.514 -5.684)"/>
+        <g id="prefix__Group_158" data-name="Group 158" transform="translate(1134.872 93.8)">
+            <circle id="prefix__Ellipse_1" cx="4.839" cy="4.839" r="4.839" class="prefix__cls-1" data-name="Ellipse 1"/>
+            <path id="prefix__Path_281" d="M1189 144.427l1.274 1.209 2.323-2.248" class="prefix__cls-1" data-name="Path 281" transform="translate(-1185.956 -139.673)"/>
+        </g>
+    </g>
+</svg>

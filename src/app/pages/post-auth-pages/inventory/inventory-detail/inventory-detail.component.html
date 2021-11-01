@@ -1,0 +1,172 @@
+<div class="card card-stats">
+    <div class="card-header px-1 py-3 tab_admin_card_header">
+        <div class="px-2">
+            <div class="card-title mt-0 d-flex justify-content-between">
+                <a href="javascript:;" class="card-title-back" [routerLink]="[routes.previous]">
+                    <i class="fa fa-long-arrow-left"></i> Back
+                </a>
+                <a *ngIf="!isEdit" href="javascript:;" class="card-title-back" (click)="isEdit = true; editView()">
+                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="card-body" *ngIf="!!productDetails || isEdit">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="dp-upload-container px-2">
+                    <div class="dp-upload py-3">
+                        <div class="dp-holder" *ngIf="!isEdit">
+                            <img [src]="productDetails?.image" alt="product image">
+                        </div>
+                        <ng-container *ngIf="isEdit">
+                            <img [src]="productFormControl.image.value" alt="upload" width="120">
+                            <input class="d-none" type="file" accept="image/x-png,image/jpeg,image/jpg"
+                                (change)="onFileChanged($event)" #fileInput>
+                            <button class="btn admin_btn_primary mt-3" (click)="fileInput.click()">Browse</button>
+                            <p class="mt-2 upload-description">
+                                Max file size allowed: 250KB <br>
+                                File extension allowed: jpeg, png, gif, bmp <br>
+                                Max Image dimension: 500px X 500 px <br>
+                            </p>
+                        </ng-container>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="admin_view_table table-responsive-sm" *ngIf="!isEdit">
+                    <table class="table table-bordered">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <p><strong>PRODUCT ID</strong></p>
+                                    <p class="text-uppercase">{{ productDetails?.id }}</p>
+                                </td>
+                                <td>
+                                    <p><strong>PRODUCT NAME</strong></p>
+                                    <p class="">{{ productDetails?.product_name ? productDetails?.product_name : 'NA' }}</p>
+                                </td>
+                                <td>
+                                    <p><strong>VENDOR</strong></p>
+                                    <p>{{productDetails?.vendor ? productDetails?.vendor : 'NA'}}</p>
+                                </td>
+                                <td>
+                                    <p><strong>PRODUCT STATUS</strong></p>
+                                    <p class="">{{productDetails?.is_outofstock ? 'In Stock' : 'Out of Stock'}}</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p><strong>BRAND</strong></p>
+                                    <p class="">{{productDetails?.brand ? productDetails?.brand : 'NA'}}
+                                    </p>
+                                </td>
+                                <td>
+                                    <p><strong>QUANTITY</strong></p>
+                                    <p class="">{{ productDetails?.quantity }}</p>
+                                </td>
+                                <td>
+                                    <p><strong>MRP</strong></p>
+                                    <p class="">₹ {{ productDetails?.mrp }}</p>
+                                </td>
+                                <td>
+                                    <p><strong>DISCOUNT</strong></p>
+                                    <p class="">₹ {{ productDetails?.discount }}</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p><strong>GST</strong></p>
+                                    <p class="">{{ productDetails?.gst ? productDetails?.gst + '%' : 'NA' }}</p>
+                                </td>
+                                <td>
+                                    <p><strong>RETURNABLE</strong></p>
+                                    <p>{{ productDetails?.is_returnable ? 'Yes' : 'No' }}</p>
+                                </td>
+                                <td>
+                                    <p><strong>DISCOUNTINUED</strong></p>
+                                    <p class="">{{ productDetails?.is_discontinued ? 'Yes' : 'No' }}</p>
+                                </td>
+                                <td>
+                                    <p><strong>PROCESSED</strong></p>
+                                    <p>{{productDetails?.is_processed ? 'Yes' : 'No'}}</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div *ngIf="isEdit">
+                    <form [formGroup]="productForm">
+                        <div class="row">
+                            <div class="form-group col-md-4">
+                                <label>Product Name</label>
+                                <input type="text" formControlName="productName" class="form-control"
+                                    aria-describedby="name" placeholder="Product Name">
+                                <div *ngIf="productFormControl.productName.errors && isSubmitting" class="invalid-feedback">
+                                    <div *ngIf="productFormControl.productName.errors.required">* Product name is
+                                        required.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label>Quantity</label>
+                                <input numbersOnly type="tel" formControlName="quantity" class="form-control"
+                                    aria-describedby="email" placeholder="Quantity">
+                                <div *ngIf="productFormControl.quantity.errors && isSubmitting" class="invalid-feedback">
+                                    <div *ngIf="productFormControl.quantity.errors.required">*Quantity is required.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label>Brand</label>
+                                <input type="text" formControlName="brand" class="form-control" aria-describedby="name"
+                                    placeholder="Brand">
+                                <div *ngIf="productFormControl.brand.errors && isSubmitting " class="invalid-feedback">
+                                    <div *ngIf="productFormControl.brand.errors.required">*Brand is required.</div>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label>MRP</label>
+                                <input numberOnly type="tel" formControlName="mrp" class="form-control"
+                                    aria-describedby="mobile" placeholder="MRP">
+                                <div *ngIf="productFormControl.mrp.errors && isSubmitting " class="invalid-feedback">
+                                    <div *ngIf="productFormControl.mrp.errors.required">*MRP is required.</div>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label>Discount</label>
+                                <input numberOnly type="tel" formControlName="discount" class="form-control"
+                                    aria-describedby="name" placeholder="Discount">
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label>GST</label>
+                                <input numberOnly type="tel" formControlName="gst" class="form-control"
+                                    aria-describedby="name" placeholder="GST">
+                                <div *ngIf="productFormControl.gst.errors && isSubmitting" class="invalid-feedback">
+                                    <div *ngIf="productFormControl.gst.errors.required">*GST is required.</div>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label>Retrunable</label>
+                                <div class="custom-control custom-switch">
+                                    <input formControlName="returnAble" type="checkbox" class="custom-control-input"
+                                        id="customSwitch1">
+                                    <label class="custom-control-label" for="customSwitch1"></label>
+                                </div>
+                                <div *ngIf="productFormControl.returnAble.errors && isSubmitting " class="invalid-feedback">
+                                    <div *ngIf="productFormControl.returnAble.errors.required">* Return able is
+                                        required.</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn-groups">
+                            <button class="btn admin_btn_primary mr-2" (click)="submitHandler()">Save</button>
+                            <button class="btn admin_btn_tirtiary_outline mr-2"
+                                (click)="cancel()">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

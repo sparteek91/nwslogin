@@ -1,0 +1,94 @@
+@import '../../../../../assets//scss//main/variables';
+
+.browse-btn {
+    display: flex;
+    justify-content: space-between;
+    width: 245px;
+    margin: 0 auto;
+    cursor: pointer;
+    box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.16);
+    padding: 6px 12px;
+}
+
+.img-preview {
+    img {
+        max-width: 120px;
+        border-radius: 8px;
+        width: 100%;
+    }
+}
+
+.hold {
+    .fa-exclamation {
+        border: 1px solid $new-red;
+        border-radius: 50%;
+        padding: 20px 30px;
+        color: $new-red;
+        font-size: 30px;
+    }
+}
+
+.package {
+    align-items: center;
+    .img-preview {
+        img {
+            max-width: 75px;
+        }
+    }
+
+    .browse-btn {
+        width: auto;
+    }
+
+    .fa-times {
+        border-radius: 50%;
+        background-color: $new-grey;
+        padding: 1px 2px;
+        font-size: 13px;
+        color: #fff;
+        position: absolute;
+        right: 14px;
+        top: -7px;
+        cursor: pointer;
+    }
+}
+
+.check-img {
+    max-width: 32px;
+    width: 100%;
+}
+
+.dispatch {
+    .check-img {
+        max-width: 75px;
+        margin-top: 10px;
+    }
+}
+
+.shipping-label {
+    img {
+        max-width: 300px;
+        width: 100%;
+    }
+}
+
+.modal-header {
+    border-bottom: 0;
+}
+
+.modal-footer {
+    justify-content: center;
+    border-top: 0;
+}
+
+.order-detail {
+    margin-left: 3rem;
+    margin-right: 3rem;
+}
+
+@media (max-width: 576px) {
+    .order-detail {
+        margin-left: 0.1rem;
+        margin-right: 0.1rem;
+    }
+}

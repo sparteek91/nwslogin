@@ -1,0 +1,23 @@
+<div class="wrapper">
+
+	<div>
+		<header>
+			<app-navbar></app-navbar>
+		</header>
+		<div class="sidebar" data-color="white" data-active-color="danger">
+			<app-sidebar></app-sidebar>
+		</div>
+	</div>
+
+
+	<div class="main-panel d-none">
+		<!-- <app-navbar></app-navbar> -->
+		<div class="sidebar" data-color="white" data-active-color="danger">
+			<app-sidebar></app-sidebar>
+		</div>
+		<div class="content p-3">
+			<router-outlet *ngIf="gs.vendorInfo?.id"></router-outlet>
+		</div>
+		<app-footer></app-footer>
+	</div>
+</div>

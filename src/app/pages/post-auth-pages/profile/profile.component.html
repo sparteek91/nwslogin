@@ -1,0 +1,154 @@
+<div class="card card-stats">
+	<div class="card-header px-1 py-3 tab_admin_card_header">
+		<div class="d-flex align-items-center justify-content-between px-2">
+			<div class="card-title">Vendor Information</div>
+			<div class="card-title">Page {{ active }}/2</div>
+		</div>
+	</div>
+
+	<div class="card-body">
+		<div class="row">
+			<!-- <div class="col-md-4">
+				<div class="dp-upload-container px-2">
+					<div class="dp-upload py-3">
+						<img src="assets/img/oneTab-upload_icon.svg" alt="upload" width="120">
+						<p class="mt-3 mb-2">
+							Article Image Drag and Drop <br>- or -
+						</p>
+						<input type="file" class="d-none">
+						<button class="btn admin_btn_primary">Browse</button>
+						<p class="mt-2 upload-description">
+							Max file size allowed: 250KB <br>
+							File extension allowed: jpeg, png, gif, bmp <br>
+							Max Image dimension: 500px X 500 px <br>
+						</p>
+					</div>
+				</div>
+			</div> -->
+			<div class="col-md-12">
+				<!-- nav-tabs -->
+				<ul ngbNav #nav="ngbNav" [(activeId)]="active" class="">
+					<li [ngbNavItem]="1">
+						<ng-template ngbNavContent>
+							<form [formGroup]="form1">
+								<div class="row">
+									<div class="form-group col-md-4">
+										<label>Vendor Full Name</label>
+										<input type="text" formControlName="name" class="form-control" aria-describedby="name" placeholder="Full Name">
+										<div *ngIf="isNext && formData1.name.errors" class="invalid-feedback">
+											<div *ngIf="formData1.name.errors.required">*Name is required.</div>
+										</div>
+									</div>
+									<div class="form-group col-md-4">
+										<label>Email Id</label>
+										<input type="email" formControlName="email" class="form-control" aria-describedby="email" placeholder="Email">
+										<div *ngIf="isNext && formData1.email.errors" class="invalid-feedback">
+											<div *ngIf="formData1.email.errors.required">*Email is required.</div>
+											<div *ngIf="formData1.email.errors.pattern">*Invalid email.</div>
+										</div>
+									</div>
+									<div class="form-group col-md-4">
+										<label>Mobile Number</label>
+										<input type="tel" formControlName="phone_no" class="form-control" aria-describedby="mobile" placeholder="Mobile Number">
+										<div *ngIf="isNext && formData1.phone_no.errors" class="invalid-feedback">
+											<div *ngIf="formData1.phone_no.errors.required">*Mobile number is required.</div>
+										</div>
+									</div>
+									<div class="form-group col-md-4">
+										<label>Primary Contact Name</label>
+										<input type="text" formControlName="primary_contact_name" class="form-control" aria-describedby="contact name" placeholder="Contact Person’s Name">
+									</div>
+									<div class="form-group col-md-4">
+										<label>Primary Contact Mobile No.</label>
+										<input type="tel" formControlName="primary_contact_no" class="form-control" aria-describedby="contact numbrt" placeholder="Primary Contact Mobile No.">
+									</div>
+									<div class="form-group col-md-4">
+										<label>Address</label>
+										<input type="text" formControlName="address_line" class="form-control" aria-describedby="address" placeholder="Address">
+										<div *ngIf="isNext && formData1.address_line.errors" class="invalid-feedback">
+											<div *ngIf="formData1.address_line.errors.required">*Address is required.</div>
+										</div>
+									</div>
+								</div>
+								<div class="btn-groups">
+									<button class="btn admin_btn_primary mr-2" (click)="next()">Next</button>
+									<!-- <button class="btn admin_btn_secondary">Cancel</button> -->
+								</div>
+							</form>
+						</ng-template>
+					</li>
+					<li [ngbNavItem]="2">
+						<ng-template ngbNavContent>
+							<form [formGroup]="form2">
+								<div class="row">
+									<div class="form-group col-md-4">
+										<label>Pincode</label>
+										<input type="tel" maxlength="6" formControlName="pincode" class="form-control" aria-describedby="pincode" placeholder="Pincode">
+										<div *ngIf="isSubmitting && formData2.pincode.errors" class="invalid-feedback">
+											<div *ngIf="formData2.pincode.errors.required">*Pincode is required.</div>
+										</div>
+									</div>
+									<div class="form-group col-md-4">
+										<label>City</label>
+										<input type="text" formControlName="city" class="form-control" aria-describedby="city" placeholder="City">
+										<div *ngIf="isSubmitting && formData2.city.errors" class="invalid-feedback">
+											<div *ngIf="formData2.city.errors.required">*City is required.</div>
+										</div>
+									</div>
+									<div class="form-group col-md-4">
+										<label>State</label>
+										<input type="text" formControlName="state" class="form-control" aria-describedby="state" placeholder="State">
+										<div *ngIf="isSubmitting && formData2.state.errors" class="invalid-feedback">
+											<div *ngIf="formData2.state.errors.required">*State is required.</div>
+										</div>
+									</div>
+									<div class="form-group col-md-4">
+										<label>Country</label>
+										<input type="text" formControlName="country" class="form-control" aria-describedby="country" placeholder="Country">
+										<div *ngIf="isSubmitting && formData2.country.errors" class="invalid-feedback">
+											<div *ngIf="formData2.country.errors.required">*Country is required.</div>
+										</div>
+									</div>
+									<div class="form-group col-md-4">
+										<label>GSTin Number</label>
+										<input type="text" formControlName="gstin" class="form-control" aria-describedby="gstin" placeholder="GSTIN Number">
+										<div *ngIf="isSubmitting && formData2.gstin.errors" class="invalid-feedback">
+											<div *ngIf="formData2.gstin.errors.required">*GSTIN is required.</div>
+										</div>
+									</div>
+									<div class="form-group col-md-4">
+										<label>PAN</label>
+										<input type="text" formControlName="pan" class="form-control" aria-describedby="pan" placeholder="PAN" maxlength="10">
+										<div *ngIf="isSubmitting && formData2.pan.errors" class="invalid-feedback">
+											<div *ngIf="formData2.pan.errors.required">*PAN is required.</div>
+										</div>
+									</div>
+									<div class="form-group col-md-4">
+										<label>Aadhar</label>
+										<input type="text" formControlName="aadhar" class="form-control" aria-describedby="aadhar" placeholder="Aadhar Number">
+										<div *ngIf="isSubmitting && formData2.aadhar.errors" class="invalid-feedback">
+											<div *ngIf="formData2.aadhar.errors.required">*Aadhar is required.</div>
+										</div>
+									</div>
+									<div class="form-group col-md-4">
+										<label>Drug License</label>
+										<input type="text" formControlName="drug_license" class="form-control" aria-describedby="license" placeholder="Drug License">
+										<div *ngIf="isSubmitting && formData2.drug_license.errors" class="invalid-feedback">
+											<div *ngIf="formData2.drug_license.errors.required">*Drug license is required.</div>
+										</div>
+									</div>
+								</div>
+								<div class="btn-groups">
+									<button class="btn admin_btn_primary mr-2" (click)="submitHandler()">Save</button>
+									<button class="btn admin_btn_tirtiary_outline mr-2" (click)="cancel()">Cancel</button>
+									<button class="btn admin_btn_secondary_solid" (click)="active = 1">Previous</button>
+								</div>
+							</form>
+						</ng-template>
+					</li>
+				</ul>
+				<div [ngbNavOutlet]="nav" class="mt-2"></div>
+			</div>
+		</div>
+	</div>
+</div>

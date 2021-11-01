@@ -1,0 +1,23 @@
+<!-- <div class="modal-header">
+    <h4 class="modal-title">Hi there!</h4>
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div> -->
+<div class="modal-body">
+    <div class="img-wrapper {{data?.imgClass}}">
+        <img [src]="data?.imgsrc" alt="logo">
+    </div>
+    <h4 *ngIf="data?.headingTxt" class="{{data?.headingClass}}">
+        {{ data?.headingTxt }}
+    </h4>
+    <p *ngIf="data?.msg" class="{{data?.msgClass}}">
+        {{ data?.msg }}
+    </p>
+</div>
+<div *ngIf="data?.isBtnGrp" class="modal-footer {{data?.footerWrapperClass}}">
+    <button type="button" class="{{data?.cancelBtnClass}}" *ngIf="data?.cancelBtn" (click)="activeModal.close()">
+        {{ data?.cancelBtn }}
+    </button>
+    <button type="button" class="{{data?.okBtnClass}}" *ngIf="data?.okBtn" (click)="okAction()">{{ data?.okBtn }}</button>
+</div>

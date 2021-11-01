@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="21.79" height="27.594" viewBox="0 0 21.79 27.594">
+    <defs>
+        <style>
+            .prefix__cls-1{fill:#fff}
+        </style>
+    </defs>
+    <g id="prefix__notification" transform="translate(-53.848)">
+        <g id="prefix__Group_20183" data-name="Group 20183" transform="translate(53.848)">
+            <g id="prefix__Group_20182" data-name="Group 20182">
+                <path id="prefix__Path_23130" d="M74.815 20.375A2.819 2.819 0 0 1 73.9 18.3v-5.365a.539.539 0 0 0-1.078 0V18.3a3.9 3.9 0 0 0 1.269 2.87 1.4 1.4 0 0 1-.945 2.435H56.327a1.4 1.4 0 0 1-.945-2.435 3.9 3.9 0 0 0 1.268-2.87v-6.228A8.086 8.086 0 0 1 68.262 4.8a3.992 3.992 0 1 0 .708-.85 9.139 9.139 0 0 0-2.555-.881 1.994 1.994 0 1 0-3.36 0 9.177 9.177 0 0 0-7.481 9.007V18.3a2.819 2.819 0 0 1-.918 2.075 2.479 2.479 0 0 0 1.672 4.309h5a3.449 3.449 0 0 0 6.814 0h5a2.479 2.479 0 0 0 1.672-4.309zM71.649 3.988a2.91 2.91 0 1 1-2.91 2.91 2.914 2.914 0 0 1 2.91-2.91zm-6.915-2.91a.916.916 0 1 1-.916.916.917.917 0 0 1 .917-.916zm0 25.438a2.375 2.375 0 0 1-2.309-1.832h4.618a2.375 2.375 0 0 1-2.308 1.832z" class="prefix__cls-1" data-name="Path 23130" transform="translate(-53.848)"/>
+            </g>
+        </g>
+        <g id="prefix__Group_20185" data-name="Group 20185" transform="translate(58.16 11.522)">
+            <g id="prefix__Group_20184" data-name="Group 20184">
+                <path id="prefix__Path_23131" d="M134.387 213.791a.539.539 0 0 0-.539.539v.011a.539.539 0 0 0 1.078 0v-.011a.539.539 0 0 0-.539-.539z" class="prefix__cls-1" data-name="Path 23131" transform="translate(-133.848 -213.791)"/>
+            </g>
+        </g>
+        <g id="prefix__Group_20187" data-name="Group 20187" transform="translate(58.637 5.497)">
+            <g id="prefix__Group_20186" data-name="Group 20186">
+                <path id="prefix__Path_23132" d="M148.8 102a6.567 6.567 0 0 0-6.055 4.008.539.539 0 1 0 .992.421 5.491 5.491 0 0 1 5.063-3.351.539.539 0 0 0 0-1.078z" class="prefix__cls-1" data-name="Path 23132" transform="translate(-142.704 -101.999)"/>
+            </g>
+        </g>
+        <g id="prefix__Group_20189" data-name="Group 20189" transform="translate(70.474 5.111)">
+            <g id="prefix__Group_20188" data-name="Group 20188">
+                <path id="prefix__Path_23133" d="M363.713 94.874a.539.539 0 0 0-.587.117l-.62.62a.539.539 0 0 0 .462.914v.975a.539.539 0 0 0 1.078 0v-2.128a.539.539 0 0 0-.333-.498z" class="prefix__cls-1" data-name="Path 23133" transform="translate(-362.348 -94.833)"/>
+            </g>
+        </g>
+    </g>
+</svg>

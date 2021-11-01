@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25">
+    <defs>
+        <style>
+            .prefix__cls-1{fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round}
+        </style>
+    </defs>
+    <g id="prefix__Group_178" data-name="Group 178" transform="translate(-397.389 -37.951)">
+        <path id="prefix__Path_291" d="M415.854 53.184v-9.508l-5.114-5.225h-12.851v24h17.965V60.7" class="prefix__cls-1" data-name="Path 291"/>
+        <path id="prefix__Path_292" d="M416.264 38.451v4.711h4.273" class="prefix__cls-1" data-name="Path 292" transform="translate(-5.746)"/>
+        <path id="prefix__Line_6" d="M0 0L6.533 0" class="prefix__cls-1" data-name="Line 6" transform="translate(400.039 45.256)"/>
+        <path id="prefix__Line_7" d="M0 0L8.259 0" class="prefix__cls-1" data-name="Line 7" transform="translate(400.039 48.264)"/>
+        <path id="prefix__Line_8" d="M0 0L10.313 0" class="prefix__cls-1" data-name="Line 8" transform="translate(400.039 51.271)"/>
+        <path id="prefix__Line_9" d="M0 0L8.259 0" class="prefix__cls-1" data-name="Line 9" transform="translate(400.039 54.279)"/>
+        <path id="prefix__Line_10" d="M0 0L8.259 0" class="prefix__cls-1" data-name="Line 10" transform="translate(400.039 57.286)"/>
+        <g id="prefix__Group_177" data-name="Group 177" transform="translate(413.951 53.516)">
+            <circle id="prefix__Ellipse_6" cx="3.969" cy="3.969" r="3.969" class="prefix__cls-1" data-name="Ellipse 6"/>
+            <path id="prefix__Path_293" d="M426.051 67.527v-4.232l-1.49 1.561" class="prefix__cls-1" data-name="Path 293" transform="translate(-422.082 -61.481)"/>
+            <path id="prefix__Line_11" d="M0 0L1.49 1.561" class="prefix__cls-1" data-name="Line 11" transform="translate(3.969 1.813)"/>
+        </g>
+    </g>
+</svg>

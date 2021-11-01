@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="26.734" height="17.886" viewBox="0 0 26.734 17.886">
+    <defs>
+        <style>
+            .prefix__cls-1{fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round}
+        </style>
+    </defs>
+    <g id="prefix__Group_1451" data-name="Group 1451" transform="translate(601.232 -4929.037)">
+        <path id="prefix__Rectangle_624" d="M0 0H25.734V16.886H0z" class="prefix__cls-1" data-name="Rectangle 624" transform="translate(-600.732 4929.537)"/>
+        <path id="prefix__Line_161" d="M0 0L25.734 0" data-name="Line 161" transform="translate(-600.732 4936.472)" style="opacity:.1;fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round"/>
+        <path id="prefix__Line_162" d="M0 0L25.734 0" class="prefix__cls-1" data-name="Line 162" transform="translate(-600.732 4933.344)"/>
+        <path id="prefix__Line_163" d="M0 0L9.857 0" class="prefix__cls-1" data-name="Line 163" transform="translate(-596.979 4940.882)"/>
+        <path id="prefix__Line_164" d="M0 0L9.857 0" class="prefix__cls-1" data-name="Line 164" transform="translate(-596.979 4942.993)"/>
+        <rect id="prefix__Rectangle_625" width="5.143" height="5.679" class="prefix__cls-1" data-name="Rectangle 625" rx="2.571" transform="translate(-583.934 4938.287)"/>
+    </g>
+</svg>

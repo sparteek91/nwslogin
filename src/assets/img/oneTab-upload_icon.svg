@@ -1,0 +1,25 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" width="138" height="138" viewBox="0 0 138 138">
+    <g id="prefix__Ellipse_141" data-name="Ellipse 141" style="stroke:#dedddd;stroke-linecap:round;stroke-width:1.25px;stroke-dasharray:4 4;fill:none">
+        <circle cx="69" cy="69" r="69" style="stroke:none"/>
+        <circle cx="69" cy="69" r="68.375" style="fill:none"/>
+        
+  </g>
+  <svg xmlns="http://www.w3.org/2000/svg" width="65.44" height="65.44" x="41.5" y="41.5" viewBox="0 0 65.44 65.44">
+    <defs>
+        <style>
+            .prefix__cls-1{fill:#0aa156}
+        </style>
+    </defs>
+    <g id="prefix__Group_284" data-name="Group 284" transform="translate(-170.72 -170.72)">
+        <g id="prefix__Group_283" data-name="Group 283" transform="translate(170.72 170.72)">
+            <g id="prefix__Group_282" data-name="Group 282">
+                <path id="prefix__Path_956" d="M266.617 248.893a17.723 17.723 0 1 0 17.723 17.724 17.74 17.74 0 0 0-17.723-17.724zm0 32.72a15 15 0 1 1 15-15 14.988 14.988 0 0 1-15 15z" class="prefix__cls-1" data-name="Path 956" transform="translate(-218.9 -218.9)"/>
+                <path id="prefix__Path_957" d="M284.341 272.557a1.358 1.358 0 0 0-1.923 0l-5.958 5.944a1.359 1.359 0 0 0 1.923 1.922l3.626-3.613v11.59a1.363 1.363 0 1 0 2.727 0v-11.589l3.626 3.626a1.369 1.369 0 0 0 1.938-1.937z" class="prefix__cls-1" data-name="Path 957" transform="translate(-235.656 -233.239)"/>
+                <path id="prefix__Path_958" d="M193.9 219.8h-10.774a6.565 6.565 0 0 0 1.186-2.44 1.348 1.348 0 0 0 .041-.327V187.08h40.9v8.139a1.4 1.4 0 0 0 1.159 1.391 1.365 1.365 0 0 0 1.568-1.35v-9.543a1.367 1.367 0 0 0-1.363-1.364h-4.09V178.9a1.367 1.367 0 0 0-1.364-1.363h-28.9l-3.927-6.19a1.344 1.344 0 0 0-1.145-.627h-15.108a1.367 1.367 0 0 0-1.363 1.363v44.949a1.348 1.348 0 0 0 .041.327 6.778 6.778 0 0 0 6.448 5.1 1.4 1.4 0 0 0 .327.068h16.319a1.4 1.4 0 0 0 1.39-1.159 1.365 1.365 0 0 0-1.345-1.568zm-12.27-34.083v31.138a4.332 4.332 0 0 1-8.18 0v-43.409h12.979l3.927 6.19a1.35 1.35 0 0 0 1.159.627H219.8v4.09h-36.81a1.367 1.367 0 0 0-1.363 1.364z" class="prefix__cls-1" data-name="Path 958" transform="translate(-170.72 -170.72)"/>
+            </g>
+        </g>
+    </g>
+</svg>
+</svg>
+

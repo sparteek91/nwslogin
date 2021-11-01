@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="87" height="87" viewBox="0 0 87 87">
+  <g id="Group_364" data-name="Group 364" transform="translate(-918 -373)">
+    <circle id="Ellipse_37" data-name="Ellipse 37" cx="43.5" cy="43.5" r="43.5" transform="translate(918 373)" fill="#fff"/>
+    <g id="Icon_ionic-ios-checkmark-circle-outline" data-name="Icon ionic-ios-checkmark-circle-outline" transform="translate(934.467 389.342)">
+      <path id="Path_353" data-name="Path 353" d="M34.532,14.378l-1.98-2.036a.426.426,0,0,0-.315-.135h0a.409.409,0,0,0-.315.135L18.2,26.168l-5-5a.435.435,0,0,0-.63,0l-2,2a.448.448,0,0,0,0,.641l6.3,6.3a1.992,1.992,0,0,0,1.316.641,2.088,2.088,0,0,0,1.305-.619H19.5l15.042-15.12A.481.481,0,0,0,34.532,14.378Z" transform="translate(4.236 5.299)" fill="#0aa156"/>
+      <path id="Path_354" data-name="Path 354" d="M26.775,6.525A20.254,20.254,0,0,1,41.1,41.1,20.254,20.254,0,0,1,12.454,12.454,20.116,20.116,0,0,1,26.775,6.525m0-3.15a23.4,23.4,0,1,0,23.4,23.4,23.4,23.4,0,0,0-23.4-23.4Z" transform="translate(0 0)" fill="#0aa156"/>
+    </g>
+  </g>
+</svg>
