@@ -1,0 +1,14 @@
+.nav-item {
+    &:hover {
+        background-color: transparent;
+    }
+
+    &.active {
+        a {
+            div {
+                background-color: rgba(238, 51, 66, 0.1);
+                border-radius: 10px;
+            }
+        }
+    }
+}

@@ -18,6 +18,7 @@ import { AuthGuard, UnAuthGuard } from './shared/guards';
 import { NavbarComponent } from './layouts/postauth-layout/navbar/navbar.component';
 import { SidebarComponent } from './layouts/postauth-layout/sidebar/sidebar.component';
 import { FooterComponent } from './layouts/postauth-layout/footer/footer.component';
+import { ToolbarComponent } from './layouts/postauth-layout/toolbar/toolbar.component';
 
 @NgModule({
 	declarations: [
@@ -27,6 +28,7 @@ import { FooterComponent } from './layouts/postauth-layout/footer/footer.compone
 		NavbarComponent,
 		SidebarComponent,
 		FooterComponent,
+  ToolbarComponent,
 	],
 	imports: [
 		BrowserModule,

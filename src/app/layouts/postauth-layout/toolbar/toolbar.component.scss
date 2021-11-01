@@ -1,0 +1,20 @@
+.toolbar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 1030;
+    display: flex;
+    background-color: #115985;
+    color: #fff;
+    padding: 20px 0;
+    margin-top: 62px !important;
+
+    .title-wrapper {
+        .title {
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 27px;
+            text-transform: uppercase;
+        }
+    }
+}

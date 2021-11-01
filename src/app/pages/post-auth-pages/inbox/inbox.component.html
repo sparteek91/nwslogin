@@ -1,0 +1,15 @@
+<div class="card no-shadow">
+    <div class="card-body p-0">
+        <div class="datatable-body mt-3">
+            <!-- [rowClass]="getRowClass" -->
+            <ngx-datatable #table class="material no-shadow" id="inbox-table" [rows]="rows" [columns]="columns"
+                [columnMode]="'force'" [headerHeight]="50" [rowHeight]="'auto'" [footerHeight]="50" [scrollbarH]="true"
+                [rowIdentity]="getId" [externalPaging]="true" [externalSorting]="true" [limit]="pagePayload.limit"
+                [count]="count" [offset]="pagePayload.offset / 10" [loadingIndicator]="isLoading"
+                (page)="onPageChange($event)" (sort)="table.offset = pagePayload.offset / 10"
+                (select)="onSelect($event)" [messages]="{emptyMessage: 'No data to display', totalMessage: 'results'}">
+            </ngx-datatable>
+            <ng-template #checkbox let-row="row" let-value="value" let-i="index"></ng-template>
+        </div>
+    </div>
+</div>

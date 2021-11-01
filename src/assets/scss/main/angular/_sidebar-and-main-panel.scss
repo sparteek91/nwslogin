@@ -2,7 +2,7 @@
 	// overflow-x: hidden;
 	height: 100vh;
 	background: #f2f2f2;
-	margin-top: 62px;
+	margin-top: 124px;
 	padding: 0;
 
 	.active-pro {
@@ -67,26 +67,6 @@
 		//   -webkit-transform: translate3d(100%, -25%, 0);
 		//   transform: translate3d(100%, -25%, 0);
 		// }
-		#productID {
-			.dropdown-menu {
-				-webkit-transform: translate3d(100%, -25%, 0);
-				transform: translate3d(100%, -33%, 0);
-			}
-		}
-
-		#salesOrderID {
-			.dropdown-menu {
-				-webkit-transform: translate3d(100%, -50%, 0);
-				transform: translate3d(100%, -50%, 0);
-			}
-		}
-
-		#vendorMgmtID {
-			.dropdown-menu {
-				-webkit-transform: translate3d(100%, -75%, 0);
-				transform: translate3d(100%, -100%, 0);
-			}
-		}
 	}
 
 	ul {
@@ -97,14 +77,6 @@
 			}
 		}
 	}
-}
-
-.row-color1 {
-	background-color: $light-green-row;
-}
-
-.row-color2 {
-	background-color: $light-blue-row;
 }
 
 .datatable-body-row.active .datatable-row-group,

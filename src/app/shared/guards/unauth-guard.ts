@@ -10,12 +10,13 @@ export class UnAuthGuard implements CanActivate {
 	constructor(private auth: AuthService, private router: Router) { }
 
 	canActivate() {
+        
 		return this.condition(this.auth.isAuthenticated());
     }
     
     private condition(isAuthenticated: boolean): boolean {
         if (isAuthenticated) {
-            this.router.navigate([APP_ROUTES.dashboard]).then(() => {
+            this.router.navigate([APP_ROUTES.inbox]).then(() => {
 				// To perform some async task
 			});
         }

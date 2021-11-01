@@ -41,7 +41,7 @@
 @import "main/sidebar-and-main-panel";
 @import "main/footers";
 @import "main/fixed-plugin";
-@import "main/epharma-toster";
+@import "main/toster";
 
 // cards
 @import "main/cards";
@@ -364,9 +364,30 @@ input[type="number"] {
 		font-weight: 700;
 	}
 }
+.no-shadow {
+	box-shadow: none;
+}
 // datatable
 .ngx-datatable {
-	padding: 0px 15px 0px 15px;
+	// padding: 0px 15px 0px 15px;
+
+	.datatable-header {
+		border-bottom: 0 !important;
+	}
+
+	.datatable-checkbox {
+		input[type=checkbox] {
+			&::before {
+				border: 1.5px solid #CDCDCD;
+				border-radius: 2px;
+			}
+	
+			&::after {
+				border: 1.5px solid #CDCDCD;
+				border-radius: 2px;
+			}
+		}
+	}
 }
 .ngx-datatable.material:not(.cell-selection) .datatable-body-row:hover,
 .ngx-datatable.material:not(.cell-selection) .datatable-body-row:hover .datatable-row-group {
@@ -377,7 +398,8 @@ input[type="number"] {
 	box-shadow: none !important;
 }
 .ngx-datatable.material .datatable-header .datatable-header-cell {
-	padding: 0.9rem 0.4rem !important;
+	// padding: 0.9rem 0.4rem !important;
+	background-color: #E3EEF3 !important;
 }
 .ngx-datatable.material .datatable-body .datatable-body-row .datatable-body-cell {
 	padding: 0.5rem 0.6rem !important;
@@ -661,6 +683,14 @@ input[type="number"] {
 					}
 				}
 			}
+		}
+	}
+}
+
+.v-align {
+	img {
+		&.bottom {
+			vertical-align: bottom;
 		}
 	}
 }

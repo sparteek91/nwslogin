@@ -70,6 +70,7 @@ export class LoginComponent implements OnInit {
 			return;
 		}
 		this.isSubmitting = false;
+		this.auth.login(this.form.value);
 		// this.auth.loginViaPassword(ApiRoutes.loginViaPassword, this.form.value).subscribe((res: any) => {
 		// 	if (!!res && res.access_token) {
 		// 		// navigate to 

@@ -1,21 +1,24 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { InboxComponent } from './inbox/inbox.component';
+import { ClaimSearchComponent } from './claim-search/claim-search.component';
 
 import { APP_ROUTES } from "../../shared/routes";
 
 const routes: Routes = [
-	{ 
-		path: APP_ROUTES.root, 
-		redirectTo: APP_ROUTES.root, 
-		// pathMatch: 'dashboard' 
+	{
+		path: APP_ROUTES.inbox,
+		component: InboxComponent,
+		data: {
+			title: "Inbox",
+		},
 	},
 	{
-		path: APP_ROUTES.root,
-		component: DashboardComponent,
+		path: APP_ROUTES.claim,
+		component: ClaimSearchComponent,
 		data: {
-			title: "Dashboard",
+			title: "Claim Search",
 		},
 	}
 ];

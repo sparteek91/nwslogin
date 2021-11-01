@@ -1,23 +1,16 @@
 <div class="wrapper">
-
 	<div>
 		<header>
 			<app-navbar></app-navbar>
 		</header>
-		<div class="sidebar" data-color="white" data-active-color="danger">
-			<app-sidebar></app-sidebar>
-		</div>
-	</div>
-
-
-	<div class="main-panel d-none">
-		<!-- <app-navbar></app-navbar> -->
-		<div class="sidebar" data-color="white" data-active-color="danger">
-			<app-sidebar></app-sidebar>
-		</div>
+		<app-toolbar></app-toolbar>
 		<div class="content p-3">
-			<router-outlet *ngIf="gs.vendorInfo?.id"></router-outlet>
+			<div class="content-inner">
+				<router-outlet></router-outlet>
+			</div>
+			<div class="sidebar" data-color="white" data-active-color="danger">
+				<app-sidebar></app-sidebar>
+			</div>
 		</div>
-		<app-footer></app-footer>
 	</div>
 </div>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { VENDORROUTES } from './sidebar.config';
+import { Router } from '@angular/router';
+import { sideBarRoutes } from './sidebar.config';
 
 @Component({
 	selector: 'app-sidebar',
@@ -9,10 +10,12 @@ import { VENDORROUTES } from './sidebar.config';
 export class SidebarComponent implements OnInit {
 	public menuItems: any[] = [];
 
-	constructor() { }
+	constructor(private router: Router) {
+		this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+	}
 
 	ngOnInit(): void {
-		this.menuItems = VENDORROUTES.filter(menuItem => menuItem.isVisible);
+		this.menuItems = sideBarRoutes.filter(menuItem => menuItem.isVisible);
 	}
 
 }

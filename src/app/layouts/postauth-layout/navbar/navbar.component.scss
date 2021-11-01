@@ -1,5 +1,33 @@
+.header-title {
+    color: #fff;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+}
 .navbar-wrapper {
     .breadcrumb-wrapper {
         margin-left: 50px;
+    }
+}
+
+.nav-right {
+    .nav-item {
+        a {
+            span {
+                &.name {
+                    color: #fff;
+                    font-weight: 500;
+                    font-size: 14px;
+                    line-height: 20px;
+                    padding-right: 10px;
+                    border-right: 1px solid #fff;
+                    text-transform: capitalize;
+                }
+
+                &.logout {
+                    padding-left: 10px;
+                }
+            }
+        }
     }
 }

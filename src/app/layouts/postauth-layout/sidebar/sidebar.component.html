@@ -1,10 +1,13 @@
 <div class="sidebar-wrapper">
 	<nav class="nav py-3">
 		<ul class="navbar-nav" *ngFor="let menuItem of menuItems">
-			<li class="nav-item dropdown" id="{{menuItem.id}}" *ngIf="!(!!menuItem.children && menuItem.children.length === 0)" ngbDropdownToggle ngbDropdown routerLinkActive="active">
-				<a class="nav-link">
-					<div><img class="img-fluid w-75" [src]="menuItem.imageUrl"></div>
-					{{menuItem.title}}
+			<li class="nav-item dropdown" id="{{menuItem.id}}" ngbDropdownToggle ngbDropdown #rla="routerLinkActive"
+				*ngIf="!(!!menuItem.children && menuItem.children.length === 0)" routerLinkActive="active">
+				<a class="nav-link justify-content-center">
+					<div class="text-center p-2">
+						<img class="img-fluid w-75" [src]="rla.isActive ? menuItem.activeImageUrl : menuItem.imageUrl">
+					</div>
+					<!-- {{menuItem.title}} -->
 					<b class="caret"></b>
 				</a>
 				<!-- aria-labelledby="{{menuItem.id}}" -->
@@ -13,10 +16,13 @@
 						[routerLink]="item.path">{{item.title}}</a>
 				</div>
 			</li>
-			<li class="nav-item" *ngIf="!!menuItem.children && menuItem.children.length === 0" routerLinkActive="active" [routerLink]="menuItem.path">
-				<a class="nav-link">
-					<div><img class="img-fluid w-75" style="max-width: 25px;" [src]="menuItem.imageUrl"></div>
-					{{menuItem.title}}
+			<li *ngIf="!!menuItem.children && menuItem.children.length === 0" class="nav-item"
+				[routerLink]="[menuItem.path]" [routerLinkActive]="'active'" #rla="routerLinkActive">
+				<a class="nav-link justify-content-center">
+					<div class="text-center p-2">
+						<img class="img-fluid w-75" [src]="rla.isActive ? menuItem.activeImageUrl : menuItem.imageUrl">
+					</div>
+					<!-- {{menuItem.title}} -->
 				</a>
 			</li>
 		</ul>

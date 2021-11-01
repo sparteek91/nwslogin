@@ -9,7 +9,8 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { PostAuthRoutingModule } from './post-auth-routing.module';
 import { SharedModule } from '../../shared/shared.module';
 import { PostAuthSharedComponentsModule } from '../../shared-components/post-auth/pos-auth-shared-components.module';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { InboxComponent } from './inbox/inbox.component';
+import { ClaimSearchComponent } from './claim-search/claim-search.component';
 
 @NgModule({
 	imports: [
@@ -23,7 +24,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 		PostAuthSharedComponentsModule
 	],
 	declarations: [
-		DashboardComponent
+		InboxComponent,
+		ClaimSearchComponent
 	],
 })
 export class PostAuthModule { }

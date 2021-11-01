@@ -15,7 +15,7 @@
     top: 0;
     height: 100%;
     bottom: 0;
-    width: 6rem;
+    width: 5rem;
     left: 0;
     z-index: 1029;
     // border-right: 1px solid #ddd;
@@ -24,7 +24,7 @@
         position: relative;
         height: calc(100vh - 75px);
         // overflow: auto;
-        width: 6rem;
+        width: 5rem;
         z-index: 4;
         padding-bottom: 100px;
 
@@ -63,7 +63,8 @@
     .nav{
         height: 100%;
         display: block;
-        background: $new-green;
+        background: $white-color;
+        box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.02);
         // border-radius: $border-radius-extreme;
 
         .caret{

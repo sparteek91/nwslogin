@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ActionFlowPopupsComponent } from './action-flow-popups.component';
+import { InboxComponent } from './inbox.component';
 
-describe('ActionFlowPopupsComponent', () => {
-  let component: ActionFlowPopupsComponent;
-  let fixture: ComponentFixture<ActionFlowPopupsComponent>;
+describe('InboxComponent', () => {
+  let component: InboxComponent;
+  let fixture: ComponentFixture<InboxComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ActionFlowPopupsComponent ]
+      declarations: [ InboxComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ActionFlowPopupsComponent);
+    fixture = TestBed.createComponent(InboxComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

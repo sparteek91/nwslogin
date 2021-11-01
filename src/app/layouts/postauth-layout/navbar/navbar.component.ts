@@ -2,7 +2,7 @@ import { Component, ElementRef, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 
-import { VENDORROUTES } from '../sidebar/sidebar.config';
+import { sideBarRoutes } from '../sidebar/sidebar.config';
 import { AuthService } from '../../../shared/services/auth.service';
 import { APP_ROUTES } from '../../../shared/routes';
 
@@ -23,7 +23,7 @@ export class NavbarComponent implements OnInit {
 	}
 
 	ngOnInit(): void {
-		this.listTitles = VENDORROUTES.filter(listTitle => listTitle);
+		this.listTitles = sideBarRoutes.filter(listTitle => listTitle);
 		const navbar: HTMLElement = this.element.nativeElement;
 		this.toggleButton = navbar.getElementsByClassName('navbar-toggle')[0];
 		this.router.events.subscribe((event: any) => {

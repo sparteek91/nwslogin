@@ -6,12 +6,9 @@ export class APP_ROUTES {
 
 	//* Pre Auth layout */
 	public static login: string = 'login';
-	public static forgotPassword: string = 'forgot-password';
-	public static signUp: string = 'signup';
 
 	//* Post Auth Layoyt */
-	public static dashboard: string = 'dashboard';
+	public static inbox: string = 'inbox';
+	public static claim: string = 'claim-search';
 	public static profile: string = 'profile';
-	public static order: string = 'order';
-	public static inventory: string = 'inventory';
 }
