@@ -53,10 +53,16 @@ export class LoginComponent implements OnInit {
 		this.intiForm();
 	}
 
+	/**
+	 * @description: Returns the form controls
+	 */
 	get formData() {
 		return this.form.controls;
 	}
 
+	/**
+	 * @description: Init the login form
+	 */
 	private intiForm(): void {
 		this.form = new FormGroup({
 			email: new FormControl('', [Validators.required, Validators.pattern(/^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/)]),
@@ -64,6 +70,9 @@ export class LoginComponent implements OnInit {
 		}, { 'updateOn': 'change' });
 	}
 
+	/**
+	 * @description: Login submit action handler
+	 */
 	submit(): void {
 		if (this.form.invalid) {
 			this.isSubmitting = true;

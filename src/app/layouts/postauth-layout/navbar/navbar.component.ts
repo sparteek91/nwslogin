@@ -1,10 +1,11 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
-import { Location } from '@angular/common';
 import { Router } from '@angular/router';
+import { NgbModal, NgbModalOptions } from '@ng-bootstrap/ng-bootstrap';
 
 import { sideBarRoutes } from '../sidebar/sidebar.config';
 import { AuthService } from '../../../shared/services/auth.service';
 import { APP_ROUTES } from '../../../shared/routes';
+import { InfoModalComponent } from '../../../pages/post-auth-pages/popups/info-modal/info-modal.component';
 
 @Component({
 	selector: 'app-navbar',
@@ -18,7 +19,7 @@ export class NavbarComponent implements OnInit {
 	private toggleButton: any;
 	private sidebarVisible: boolean = false;
 
-	constructor(private location: Location, private auth: AuthService, public element: ElementRef, private router: Router) {
+	constructor(private auth: AuthService, public element: ElementRef, private router: Router, private modalService: NgbModal) {
 
 	}
 
@@ -82,5 +83,27 @@ export class NavbarComponent implements OnInit {
 			navbar.classList.add('navbar-transparent');
 			navbar.classList.remove('bg-white');
 		}
+	}
+
+	logout(): void {
+		const ngbModalOptions: NgbModalOptions = {
+			backdrop: 'static',
+			keyboard: false,
+			size: 'sm',
+		}
+		const modalRef: any = this.modalService.open(InfoModalComponent, ngbModalOptions);
+		const centerStyle = 'display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; min-height: calc(100% - (.5rem * 2));';
+		modalRef._windowCmptRef.instance._elRef.nativeElement.children[0].setAttribute('style', centerStyle);
+		modalRef.componentInstance.payload = {
+			title: '',
+			msg: 'Are you sure you want to log out?',
+			cancelBtn: 'Cancel',
+			okBtn: 'Yes, log out'
+		};
+		modalRef.componentInstance.action.subscribe((data: any) => {
+			if (data) {
+				this.auth.logout();
+			}
+		});
 	}
 }

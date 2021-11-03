@@ -1,1 +1,21 @@
-<p>claim-search works!</p>
+<div class="card no-shadow">
+	<div class="card-body p-0">
+		<div class="dt-body mt-3">
+			<div class="dt-action-header">
+				<div class="rel search-input">
+					<img src="assets/img/icons/search.png" alt="search" width="20" height="20">
+					<input class="form-control pr-4" type="text" placeholder="Enter Clain #">
+				</div>
+			</div>
+			<!-- [rowClass]="getRowClass" -->
+			<ngx-datatable #table class="material no-shadow" id="inbox-table" [rows]="rows" [columns]="columns"
+				[columnMode]="'force'" [headerHeight]="50" [rowHeight]="'auto'" [footerHeight]="50" [scrollbarH]="true"
+				[rowIdentity]="getId" [externalPaging]="true" [externalSorting]="true" [limit]="pagePayload.limit"
+				[count]="count" [offset]="pagePayload.offset / 10" [loadingIndicator]="isLoading"
+				(page)="onPageChange($event)" (sort)="table.offset = pagePayload.offset / 10"
+				(select)="onSelect($event)" [messages]="{emptyMessage: 'No data to display', totalMessage: 'results'}">
+			</ngx-datatable>
+			<ng-template #checkbox let-row="row" let-value="value" let-i="index"></ng-template>
+		</div>
+	</div>
+</div>

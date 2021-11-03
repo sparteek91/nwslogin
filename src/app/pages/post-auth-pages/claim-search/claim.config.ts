@@ -1,4 +1,4 @@
-export function inboxColumns(cellTemplate: any = {}) {
+export function claimColumns(cellTemplate: any = {}) {
     const columns: any = [
         {
             prop: '',
@@ -8,29 +8,29 @@ export function inboxColumns(cellTemplate: any = {}) {
             canAutoResize: true,
             width: 50,
             cellClass: '',
-            headerCheckboxable: false,
+            headerCheckboxable: true,
             checkboxable: true,
             cellTemplate: cellTemplate.checkbox
         },
         {
-            prop: 'item',
-            name: 'ITEM',
+            prop: 'claim_no',
+            name: 'CLAIM #',
             sortable: true,
             draggable: false,
             canAutoResize: true,
             cellClass: 'pointer underline',
         },
         {
-            prop: 'insured',
-            name: 'INSURED',
+            prop: 'business_name',
+            name: 'LAST/BUSINESS NAME',
             sortable: true,
             draggable: false,
             canAutoResize: true,
             cellClass: 'text-clip',
         },
         {
-            prop: 'claim_no',
-            name: 'CLAIM #',
+            prop: 'loss_date',
+            name: 'LOSS DATE',
             sortable: true,
             draggable: false,
             canAutoResize: true,
@@ -45,36 +45,20 @@ export function inboxColumns(cellTemplate: any = {}) {
             cellClass: '',
         },
         {
-            prop: 'agenct_no',
+            prop: 'state',
+            name: 'State',
+            sortable: true,
+            draggable: false,
+            canAutoResize: true,
+            cellClass: '',
+        },
+        {
+            prop: 'agency_no',
             name: 'AGENCY #',
             sortable: true,
             draggable: false,
             canAutoResize: true,
             cellClass: '',
-        },
-        {
-            prop: 'created_at',
-            name: 'CREATED',
-            sortable: true,
-            draggable: false,
-            canAutoResize: true,
-            cellClass: '',
-        },
-        {
-            prop: 'pri',
-            name: 'PRI',
-            sortable: true,
-            draggable: false,
-            canAutoResize: true,
-            cellClass: '',
-        },
-        {
-            prop: 'reason',
-            name: 'DIARY REASON',
-            sortable: true,
-            draggable: false,
-            canAutoResize: true,
-            cellClass: 'text-clip',
         },
     ];
     return columns;

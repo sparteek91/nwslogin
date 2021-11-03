@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DtHeaderComponent } from './dt-header.component';
+import { InfoModalComponent } from './info-modal.component';
 
-describe('DtHeaderComponent', () => {
-  let component: DtHeaderComponent;
-  let fixture: ComponentFixture<DtHeaderComponent>;
+describe('InfoModalComponent', () => {
+  let component: InfoModalComponent;
+  let fixture: ComponentFixture<InfoModalComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DtHeaderComponent ]
+      declarations: [ InfoModalComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DtHeaderComponent);
+    fixture = TestBed.createComponent(InfoModalComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -8,9 +8,9 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
 import { PostAuthRoutingModule } from './post-auth-routing.module';
 import { SharedModule } from '../../shared/shared.module';
-import { PostAuthSharedComponentsModule } from '../../shared-components/post-auth/pos-auth-shared-components.module';
 import { InboxComponent } from './inbox/inbox.component';
 import { ClaimSearchComponent } from './claim-search/claim-search.component';
+import { InfoModalComponent } from './popups/info-modal/info-modal.component';
 
 @NgModule({
 	imports: [
@@ -21,11 +21,11 @@ import { ClaimSearchComponent } from './claim-search/claim-search.component';
 		ReactiveFormsModule,
 		NgxDatatableModule,
 		SharedModule,
-		PostAuthSharedComponentsModule
 	],
 	declarations: [
 		InboxComponent,
-		ClaimSearchComponent
+		ClaimSearchComponent,
+  InfoModalComponent
 	],
 })
 export class PostAuthModule { }

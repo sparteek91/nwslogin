@@ -1,7 +1,23 @@
 <div class="card no-shadow">
     <div class="card-body p-0">
-        <div class="datatable-body mt-3">
+        <div class="dt-body mt-3">
             <!-- [rowClass]="getRowClass" -->
+            <div class="dt-action-header">
+                <div class="">
+                    <select class="form-control form-control-select">
+                        <option value="">Select User</option>
+                        <option value="">Test 1</option>
+                        <option value="">Test 2</option>
+                    </select>
+                </div>
+                <div class="d-inline-block">
+                    <select class="form-control form-control-select">
+                        <option value="">Select Group</option>
+                        <option value="">Group 1</option>
+                        <option value="">Group 2</option>
+                    </select>
+                </div>
+            </div>
             <ngx-datatable #table class="material no-shadow" id="inbox-table" [rows]="rows" [columns]="columns"
                 [columnMode]="'force'" [headerHeight]="50" [rowHeight]="'auto'" [footerHeight]="50" [scrollbarH]="true"
                 [rowIdentity]="getId" [externalPaging]="true" [externalSorting]="true" [limit]="pagePayload.limit"

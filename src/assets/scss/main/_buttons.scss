@@ -91,6 +91,24 @@
         top: 1px;
     }
 }
+.btn {
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    text-transform: capitalize;
+
+    &.btn-danger {
+        background-color: $primary-red;
+        border-color: $primary-red;
+        color: $white-color !important;
+    }
+
+    &.btn-danger-outline {
+        background-color: $white-color;
+        border: 1px solid $primary-red;
+        color: $primary-red;
+    }
+}
+
 
 // Apply the mixin to the buttons
 // .btn-default { @include btn-styles($default-color, $default-states-color); }

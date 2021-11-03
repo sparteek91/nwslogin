@@ -36,6 +36,9 @@ export class InboxComponent implements OnInit {
 		return row.id;
 	}
 
+	/**
+	 * @description: Create the columns for data table
+	 */
 	private createColumns(): void {
 		setTimeout(() => {
 			const cellTemplate: any = {
@@ -47,10 +50,24 @@ export class InboxComponent implements OnInit {
 		});
 	}
 
+	/**
+	 * @description: Get the inbox list from BE
+	 */
 	private inboxList(): void {
 		this.isLoading = true;
 		setTimeout(() => {
 			this.tempRow = [
+				{ item: 'CAT FIRST REPORT', insured: 'Sutherland,Kiefer', claim_no: 'C86378903', policy_no: '86G737GG74', agenct_no: '10/12/2021', created_at: '29/01/2021', pri: 'TOP', reason: 'The client call to inquierd some random long text reason' },
+				{ item: 'CAT FIRST REPORT', insured: 'Sutherland,Kiefer', claim_no: 'C86378903', policy_no: '86G737GG74', agenct_no: '10/12/2021', created_at: '29/01/2021', pri: 'TOP', reason: 'The client call to inquierd some random long text reason' },
+				{ item: 'CAT FIRST REPORT', insured: 'Sutherland,Kiefer', claim_no: 'C86378903', policy_no: '86G737GG74', agenct_no: '10/12/2021', created_at: '29/01/2021', pri: 'TOP', reason: 'The client call to inquierd some random long text reason' },
+				{ item: 'CAT FIRST REPORT', insured: 'Sutherland,Kiefer', claim_no: 'C86378903', policy_no: '86G737GG74', agenct_no: '10/12/2021', created_at: '29/01/2021', pri: 'TOP', reason: 'The client call to inquierd some random long text reason' },
+				{ item: 'CAT FIRST REPORT', insured: 'Sutherland,Kiefer', claim_no: 'C86378903', policy_no: '86G737GG74', agenct_no: '10/12/2021', created_at: '29/01/2021', pri: 'TOP', reason: 'The client call to inquierd some random long text reason' },
+				{ item: 'CAT FIRST REPORT', insured: 'Sutherland,Kiefer', claim_no: 'C86378903', policy_no: '86G737GG74', agenct_no: '10/12/2021', created_at: '29/01/2021', pri: 'TOP', reason: 'The client call to inquierd some random long text reason' },
+				{ item: 'CAT FIRST REPORT', insured: 'Sutherland,Kiefer', claim_no: 'C86378903', policy_no: '86G737GG74', agenct_no: '10/12/2021', created_at: '29/01/2021', pri: 'TOP', reason: 'The client call to inquierd some random long text reason' },
+				{ item: 'CAT FIRST REPORT', insured: 'Sutherland,Kiefer', claim_no: 'C86378903', policy_no: '86G737GG74', agenct_no: '10/12/2021', created_at: '29/01/2021', pri: 'TOP', reason: 'The client call to inquierd some random long text reason' },
+				{ item: 'CAT FIRST REPORT', insured: 'Sutherland,Kiefer', claim_no: 'C86378903', policy_no: '86G737GG74', agenct_no: '10/12/2021', created_at: '29/01/2021', pri: 'TOP', reason: 'The client call to inquierd some random long text reason' },
+				{ item: 'CAT FIRST REPORT', insured: 'Sutherland,Kiefer', claim_no: 'C86378903', policy_no: '86G737GG74', agenct_no: '10/12/2021', created_at: '29/01/2021', pri: 'TOP', reason: 'The client call to inquierd some random long text reason' },
+				{ item: 'CAT FIRST REPORT', insured: 'Sutherland,Kiefer', claim_no: 'C86378903', policy_no: '86G737GG74', agenct_no: '10/12/2021', created_at: '29/01/2021', pri: 'TOP', reason: 'The client call to inquierd some random long text reason' },
 				{ item: 'CAT FIRST REPORT', insured: 'Sutherland,Kiefer', claim_no: 'C86378903', policy_no: '86G737GG74', agenct_no: '10/12/2021', created_at: '29/01/2021', pri: 'TOP', reason: 'The client call to inquierd some random long text reason' },
 				{ item: 'CAT FIRST REPORT', insured: 'Sutherland,Kiefer', claim_no: 'C86378903', policy_no: '86G737GG74', agenct_no: '10/12/2021', created_at: '29/01/2021', pri: 'TOP', reason: 'The client call to inquierd some random long text reason' },
 				{ item: 'CAT FIRST REPORT', insured: 'Sutherland,Kiefer', claim_no: 'C86378903', policy_no: '86G737GG74', agenct_no: '10/12/2021', created_at: '29/01/2021', pri: 'TOP', reason: 'The client call to inquierd some random long text reason' },
@@ -63,6 +80,10 @@ export class InboxComponent implements OnInit {
 		}, 500);
 	}
 
+	/**
+	 * @description: Event that is triggered on the page change of data table
+	 * @param e: page change event
+	 */
 	onPageChange(e: any): void {
 		this.pagePayload.offset = e.offset * 10;
 		// this.inboxList();
@@ -71,5 +92,4 @@ export class InboxComponent implements OnInit {
 	onSelect(row: any) {
 		console.log(row)
 	}
-
 }
