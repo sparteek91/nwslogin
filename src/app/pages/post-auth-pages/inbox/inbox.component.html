@@ -3,6 +3,7 @@
         <div class="dt-body mt-3">
             <!-- [rowClass]="getRowClass" -->
             <div class="dt-action-header">
+                <app-dt-limit [limit]="pagePayload.limit" (limitChangeAction)="limitChangeAction($event)"></app-dt-limit>
                 <div class="">
                     <select class="form-control form-control-select">
                         <option value="">Select User</option>
@@ -23,7 +24,8 @@
                 [rowIdentity]="getId" [externalPaging]="true" [externalSorting]="true" [limit]="pagePayload.limit"
                 [count]="count" [offset]="pagePayload.offset / 10" [loadingIndicator]="isLoading"
                 (page)="onPageChange($event)" (sort)="table.offset = pagePayload.offset / 10"
-                (select)="onSelect($event)" [messages]="{emptyMessage: 'No data to display', totalMessage: 'results'}">
+                (select)="onSelect($event)" [messages]="{emptyMessage: 'No data to display', totalMessage: 'results'}"
+                [selectAllRowsOnPage]="false" [selectionType]="SelectionType.checkbox" [selected]="selected">
             </ngx-datatable>
             <ng-template #checkbox let-row="row" let-value="value" let-i="index"></ng-template>
         </div>

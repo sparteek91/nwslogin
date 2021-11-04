@@ -8,7 +8,7 @@ export function inboxColumns(cellTemplate: any = {}) {
             canAutoResize: true,
             width: 50,
             cellClass: '',
-            headerCheckboxable: false,
+            headerCheckboxable: true,
             checkboxable: true,
             cellTemplate: cellTemplate.checkbox
         },

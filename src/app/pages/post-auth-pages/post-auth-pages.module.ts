@@ -11,6 +11,7 @@ import { SharedModule } from '../../shared/shared.module';
 import { InboxComponent } from './inbox/inbox.component';
 import { ClaimSearchComponent } from './claim-search/claim-search.component';
 import { InfoModalComponent } from './popups/info-modal/info-modal.component';
+import { DtLimitComponent } from './components/dt-limit/dt-limit.component';
 
 @NgModule({
 	imports: [
@@ -25,7 +26,8 @@ import { InfoModalComponent } from './popups/info-modal/info-modal.component';
 	declarations: [
 		InboxComponent,
 		ClaimSearchComponent,
-  InfoModalComponent
+  InfoModalComponent,
+  DtLimitComponent
 	],
 })
 export class PostAuthModule { }
