@@ -16,6 +16,9 @@ export class InfoModalComponent implements OnInit {
 		console.log(this.payload);
 	}
 	
+	/**
+	 * @description: Confirm button action handler
+	 */
 	confirm(): void {
 		this.action.emit(true);
 		this.activeModal.close(true)

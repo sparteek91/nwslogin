@@ -12,7 +12,7 @@
         </p>
     </div>
     <div class="modal-footer justify-content-center">
-        <button *ngIf="payload?.cancelBtn" class="btn btn-danger-outline" (click)="activeModal.close(false)">
+        <button *ngIf="payload?.cancelBtn" class="btn btn-danger-outline mr-3" (click)="activeModal.close(false)">
             {{ payload?.cancelBtn }}
         </button>
         <button *ngIf="payload?.okBtn" class="btn btn-danger" (click)="confirm()">
