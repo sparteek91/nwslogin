@@ -1,7 +1,9 @@
 import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { DatatableComponent, SelectionType, TableColumn } from '@swimlane/ngx-datatable';
 
 import { claimColumns } from './claim.config';
+import { APP_ROUTES } from '../../../shared/routes';
 
 @Component({
 	selector: 'app-claim-search',
@@ -24,7 +26,7 @@ export class ClaimSearchComponent implements OnInit {
 	SelectionType = SelectionType;
 	selected: any[] = [];
 
-	constructor() { }
+	constructor(private router: Router) { }
 
 	ngOnInit(): void {
 		this.createColumns();
@@ -97,5 +99,15 @@ export class ClaimSearchComponent implements OnInit {
 	 */
 	limitChangeAction(limit: number): void {
 		console.log(limit)
+	}
+
+	/**
+	 * @description Row activate action handler
+	 * @param e row event
+	 */
+	onActivate(e: any): void {
+		if (e.type === "click" && e.column["prop"] === "claim_no") {
+			this.router.navigate([APP_ROUTES.claim, e.row.claim_no]);
+		}
 	}
 }

@@ -13,7 +13,7 @@
 				[columnMode]="'force'" [headerHeight]="50" [rowHeight]="'auto'" [footerHeight]="50" [scrollbarH]="true"
 				[rowIdentity]="getId" [externalPaging]="true" [externalSorting]="true" [limit]="pagePayload.limit"
 				[count]="count" [offset]="pagePayload.offset / 10" [loadingIndicator]="isLoading"
-				(page)="onPageChange($event)" (sort)="table.offset = pagePayload.offset / 10"
+				(page)="onPageChange($event)" (sort)="table.offset = pagePayload.offset / 10" (activate)="onActivate($event)"
 				(select)="onSelect($event)" [messages]="{emptyMessage: 'No data to display', totalMessage: 'results'}"
 				[selectAllRowsOnPage]="false" [selectionType]="SelectionType.checkbox" [selected]="selected">
 			</ngx-datatable>

@@ -1,12 +1,20 @@
 <div class="toolbar navbar-secondary px-5">
     <div class="container-fluid">
-        <div class="title-wrapper">
-            <div class="title">
-                {{ title }}
+        <div class="d-flex justify-content-between align-items-center">
+            <div class="title-wrapper">
+                <div class="title">
+                    {{ title }}
+                </div>
             </div>
-        </div>
-        <div class="action-wrapper">
-    
+            <div class="action-wrapper">
+                <ng-container *ngIf="activatedRoute.data.title === 'Claim Summary'">
+                    <button class="btn btn-white-outline mr-3">Close Claim</button>
+                    <button class="btn btn-white-outline mr-3">Create PDF</button>
+                    <button class="btn btn-white-outline mr-3">Print/Fax</button>
+                    <button class="btn btn-white-outline mr-3">Create Note</button>
+                    <button class="btn btn-white">+ Create Task</button>
+                </ng-container>
+            </div>
         </div>
     </div>
 </div>

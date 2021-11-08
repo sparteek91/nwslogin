@@ -67,6 +67,7 @@ export function inboxColumns(cellTemplate: any = {}) {
             draggable: false,
             canAutoResize: true,
             cellClass: '',
+            cellTemplate: cellTemplate.priority
         },
         {
             prop: 'reason',

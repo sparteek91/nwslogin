@@ -1,0 +1,17 @@
+.priority-tag {
+    padding: 8px;
+    color: #fff;
+    border-radius: 6px;
+    
+    &.top {
+        background-color: #EE3342;
+    }
+
+    &.medium {
+        background-color: #EB9F1C;
+    }
+
+    &.low {
+        background-color: #5E9FC2;
+    }
+}

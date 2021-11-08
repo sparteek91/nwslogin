@@ -28,6 +28,15 @@
                 [selectAllRowsOnPage]="false" [selectionType]="SelectionType.checkbox" [selected]="selected">
             </ngx-datatable>
             <ng-template #checkbox let-row="row" let-value="value" let-i="index"></ng-template>
+            <ng-template #priority let-row="row" let-value="value" let-i="index">
+                <span class="priority-tag" [ngClass]="{
+                    'top': value === 'TOP',
+                    'medium': value === 'MEDIUM',
+                    'low': value === 'LOW'
+                }">
+                    {{ value }}
+                </span>
+            </ng-template>
         </div>
     </div>
 </div>

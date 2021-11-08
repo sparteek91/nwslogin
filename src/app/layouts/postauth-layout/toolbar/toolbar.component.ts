@@ -9,6 +9,7 @@ import { filter, map } from 'rxjs/operators';
 })
 export class ToolbarComponent implements OnInit {
 	title: string;
+	activatedRoute!: ActivatedRouteSnapshot;
 
 	constructor(private route: ActivatedRoute, private router: Router) {
 		this.router.events
@@ -23,10 +24,11 @@ export class ToolbarComponent implements OnInit {
 				})
 			)
 			.subscribe((route: ActivatedRouteSnapshot) => {
-				// console.log(route.data.title);
+				console.log(route);
+				this.activatedRoute = route;
 				this.title = route.data.title
 			});
 	}
 
-	ngOnInit(): void { }
+	ngOnInit(): void {}
 }

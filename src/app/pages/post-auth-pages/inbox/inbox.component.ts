@@ -14,6 +14,7 @@ export class InboxComponent implements OnInit {
 	@ViewChild(DatatableComponent, { static: false }) table!: DatatableComponent;
 	public columns: TableColumn[] = [];
 	@ViewChild('checkbox', { static: false }) public checkbox!: TemplateRef<any>;
+	@ViewChild('priority', { static: false }) public priority!: TemplateRef<any>;
 	pagePayload: any = {
 		limit: 10,
 		page: 1,
@@ -44,7 +45,8 @@ export class InboxComponent implements OnInit {
 	private createColumns(): void {
 		setTimeout(() => {
 			const cellTemplate: any = {
-				checkbox: this.checkbox
+				checkbox: this.checkbox,
+				priority: this.priority
 			};
 			this.columns = [];
 			this.columns = inboxColumns(cellTemplate);
@@ -63,13 +65,13 @@ export class InboxComponent implements OnInit {
 				{ item: 'CAT FIRST 2', insured: 'Sutherland,Kiefer', claim_no: 'C86378903', policy_no: '86G737GG74', agenct_no: '10/12/2021', created_at: '29/01/2021', pri: 'TOP', reason: 'The client call to inquierd some random long text reason' },
 				{ item: 'CAT FIRST 3', insured: 'Sutherland,Kiefer', claim_no: 'C86378903', policy_no: '86G737GG74', agenct_no: '10/12/2021', created_at: '29/01/2021', pri: 'TOP', reason: 'The client call to inquierd some random long text reason' },
 				{ item: 'CAT FIRST 3', insured: 'Sutherland,Kiefer', claim_no: 'C86378903', policy_no: '86G737GG74', agenct_no: '10/12/2021', created_at: '29/01/2021', pri: 'TOP', reason: 'The client call to inquierd some random long text reason' },
-				{ item: 'CAT FIRST 4', insured: 'Sutherland,Kiefer', claim_no: 'C86378903', policy_no: '86G737GG74', agenct_no: '10/12/2021', created_at: '29/01/2021', pri: 'TOP', reason: 'The client call to inquierd some random long text reason' },
-				{ item: 'CAT FIRST 5', insured: 'Sutherland,Kiefer', claim_no: 'C86378903', policy_no: '86G737GG74', agenct_no: '10/12/2021', created_at: '29/01/2021', pri: 'TOP', reason: 'The client call to inquierd some random long text reason' },
-				{ item: 'CAT FIRST 6', insured: 'Sutherland,Kiefer', claim_no: 'C86378903', policy_no: '86G737GG74', agenct_no: '10/12/2021', created_at: '29/01/2021', pri: 'TOP', reason: 'The client call to inquierd some random long text reason' },
-				{ item: 'CAT FIRST 7', insured: 'Sutherland,Kiefer', claim_no: 'C86378903', policy_no: '86G737GG74', agenct_no: '10/12/2021', created_at: '29/01/2021', pri: 'TOP', reason: 'The client call to inquierd some random long text reason' },
-				{ item: 'CAT FIRST 8', insured: 'Sutherland,Kiefer', claim_no: 'C86378903', policy_no: '86G737GG74', agenct_no: '10/12/2021', created_at: '29/01/2021', pri: 'TOP', reason: 'The client call to inquierd some random long text reason' },
-				{ item: 'CAT FIRST 9', insured: 'Sutherland,Kiefer', claim_no: 'C86378903', policy_no: '86G737GG74', agenct_no: '10/12/2021', created_at: '29/01/2021', pri: 'TOP', reason: 'The client call to inquierd some random long text reason' },
-				{ item: 'CAT FIRST 10', insured: 'Sutherland,Kiefer', claim_no: 'C86378903', policy_no: '86G737GG74', agenct_no: '10/12/2021', created_at: '29/01/2021', pri: 'TOP', reason: 'The client call to inquierd some random long text reason' },
+				{ item: 'CAT FIRST 4', insured: 'Sutherland,Kiefer', claim_no: 'C86378903', policy_no: '86G737GG74', agenct_no: '10/12/2021', created_at: '29/01/2021', pri: 'MEDIUM', reason: 'The client call to inquierd some random long text reason' },
+				{ item: 'CAT FIRST 5', insured: 'Sutherland,Kiefer', claim_no: 'C86378903', policy_no: '86G737GG74', agenct_no: '10/12/2021', created_at: '29/01/2021', pri: 'MEDIUM', reason: 'The client call to inquierd some random long text reason' },
+				{ item: 'CAT FIRST 6', insured: 'Sutherland,Kiefer', claim_no: 'C86378903', policy_no: '86G737GG74', agenct_no: '10/12/2021', created_at: '29/01/2021', pri: 'MEDIUM', reason: 'The client call to inquierd some random long text reason' },
+				{ item: 'CAT FIRST 7', insured: 'Sutherland,Kiefer', claim_no: 'C86378903', policy_no: '86G737GG74', agenct_no: '10/12/2021', created_at: '29/01/2021', pri: 'LOW', reason: 'The client call to inquierd some random long text reason' },
+				{ item: 'CAT FIRST 8', insured: 'Sutherland,Kiefer', claim_no: 'C86378903', policy_no: '86G737GG74', agenct_no: '10/12/2021', created_at: '29/01/2021', pri: 'LOW', reason: 'The client call to inquierd some random long text reason' },
+				{ item: 'CAT FIRST 9', insured: 'Sutherland,Kiefer', claim_no: 'C86378903', policy_no: '86G737GG74', agenct_no: '10/12/2021', created_at: '29/01/2021', pri: 'LOW', reason: 'The client call to inquierd some random long text reason' },
+				{ item: 'CAT FIRST 10', insured: 'Sutherland,Kiefer', claim_no: 'C86378903', policy_no: '86G737GG74', agenct_no: '10/12/2021', created_at: '29/01/2021', pri: 'LOW', reason: 'The client call to inquierd some random long text reason' },
 				{ item: 'CAT FIRST 11', insured: 'Sutherland,Kiefer', claim_no: 'C86378903', policy_no: '86G737GG74', agenct_no: '10/12/2021', created_at: '29/01/2021', pri: 'TOP', reason: 'The client call to inquierd some random long text reason' },
 				{ item: 'CAT FIRST 12', insured: 'Sutherland,Kiefer', claim_no: 'C86378903', policy_no: '86G737GG74', agenct_no: '10/12/2021', created_at: '29/01/2021', pri: 'TOP', reason: 'The client call to inquierd some random long text reason' },
 				{ item: 'CAT FIRST 13', insured: 'Sutherland,Kiefer', claim_no: 'C86378903', policy_no: '86G737GG74', agenct_no: '10/12/2021', created_at: '29/01/2021', pri: 'TOP', reason: 'The client call to inquierd some random long text reason' },

@@ -771,3 +771,21 @@ input[type="number"] {
 		}
 	}
 }
+
+.custom-list-group {
+	.custom-label {
+		font-weight: 600;
+		font-size: 12px;
+		line-height: 18px;
+		text-transform: uppercase;
+		color: #6d7479;
+	}
+
+	.custom-label-value {
+		font-weight: 600;
+		font-size: 14px;
+		line-height: 20px;
+		text-transform: uppercase;
+		color: #242424;
+	}
+}

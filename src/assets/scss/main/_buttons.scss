@@ -108,6 +108,18 @@
         border: 1px solid $primary-red;
         color: $primary-red;
     }
+
+    &.btn-white {
+        background-color: $white-color;
+        border-color: $white-color;
+        color: #145A7F;
+    }
+
+    &.btn-white-outline {
+        background-color: #145A7F;
+        border: 1px solid $white-color;
+        color: $white-color;
+    }
 }
 
 

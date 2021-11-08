@@ -3,6 +3,7 @@ import { Routes, RouterModule } from "@angular/router";
 
 import { InboxComponent } from './inbox/inbox.component';
 import { ClaimSearchComponent } from './claim-search/claim-search.component';
+import { ClaimSummaryComponent } from './claim-search/claim-summary/claim-summary.component';
 
 import { APP_ROUTES } from "../../shared/routes";
 
@@ -19,6 +20,13 @@ const routes: Routes = [
 		component: ClaimSearchComponent,
 		data: {
 			title: "Claim Search",
+		},
+	},
+	{
+		path: APP_ROUTES.claim + '/:id',
+		component: ClaimSummaryComponent,
+		data: {
+			title: "Claim Summary",
 		},
 	}
 ];

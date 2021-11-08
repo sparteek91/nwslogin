@@ -1,0 +1,203 @@
+<div class="claim-summary">
+	<div class="toolbar">
+		<div class="container-fluid">
+			<div class="row">
+				<dl class="col-lg-2 custom-list-group">
+					<dt class="custom-label">CLAIM #</dt>
+					<dd class="custom-label-value">
+						C86378903
+					</dd>
+				</dl>
+				<dl class="col-lg-2 custom-list-group">
+					<dt class="custom-label">insured</dt>
+					<dd class="custom-label-value">
+						ALBERT, SALVATORE J JR NITTO, PATRICIA W
+					</dd>
+				</dl>
+				<dl class="col-lg-2 custom-list-group">
+					<dt class="custom-label">LOSS DATE</dt>
+					<dd class="custom-label-value">
+						02/08/2017
+					</dd>
+				</dl>
+				<dl class="col-lg-2 custom-list-group">
+					<dt class="custom-label">STATUS</dt>
+					<dd class="custom-label-value">
+						OPEN
+					</dd>
+				</dl>
+				<dl class="col-lg-2 custom-list-group">
+					<dt class="custom-label">Description</dt>
+					<dd class="custom-label-value">
+						91IV STRUCK TREE
+					</dd>
+				</dl>
+				<dl class="col-lg-2 custom-list-group">
+					<dt class="custom-label">LOCATION</dt>
+					<dd class="custom-label-value">
+						MA
+					</dd>
+				</dl>
+			</div>
+		</div>
+	</div>
+	<div class="card mt-5">
+		<div class="card-body">
+			<div class="accordion-group">
+				<ngb-accordion #a="ngbAccordion" [activeIds]="['examiners', 'policy', 'claimants', 'work-detail']">
+					<ngb-panel id="examiners">
+						<ng-template ngbPanelHeader let-opened="opened">
+							<button ngbPanelToggle
+								class="btn btn-link d-flex align-items-center justify-content-between w-100">
+								<h5 class="m-0">Examiners on file</h5>
+								<div class="caret-icon">
+									<img src="{{opened ? 'assets/img/icons/caret-up.png' : 'assets/img/icons/caret-down.png'}}"
+										alt="toggle" class="">
+								</div>
+							</button>
+						</ng-template>
+						<ng-template ngbPanelContent>
+							<div class="row">
+								<dl class="col-lg-2 custom-list-group">
+									<dt class="custom-label">bi / 3pd</dt>
+									<dd class="custom-label-value">
+										LINDA BABINEAU x6283
+									</dd>
+								</dl>
+								<dl class="col-lg-2 custom-list-group">
+									<dt class="custom-label">1pd</dt>
+									<dd class="custom-label-value">
+										YOGESH PAWAR x1207
+									</dd>
+								</dl>
+								<dl class="col-lg-2 custom-list-group">
+									<dt class="custom-label">SUBRO</dt>
+									<dd class="custom-label-value">
+										SANDRA DUFF x1172
+									</dd>
+								</dl>
+								<dl class="col-lg-2 custom-list-group">
+									<dt class="custom-label">ACV</dt>
+									<dd class="custom-label-value">
+										GAIL BONCEK x1168
+									</dd>
+								</dl>
+							</div>
+						</ng-template>
+					</ngb-panel>
+
+					<ngb-panel id="policy">
+						<ng-template ngbPanelHeader let-opened="opened">
+							<button ngbPanelToggle
+								class="btn btn-link d-flex align-items-center justify-content-between w-100">
+								<h5 class="m-0">Policy info</h5>
+								<div class="caret-icon">
+									<img src="{{opened ? 'assets/img/icons/caret-up.png' : 'assets/img/icons/caret-down.png'}}"
+										alt="toggle" class="">
+								</div>
+							</button>
+						</ng-template>
+						<ng-template ngbPanelContent>
+							<div class="row">
+								<dl class="col-lg-2 custom-list-group">
+									<dt class="custom-label">UNDERWRITER</dt>
+									<dd class="custom-label-value">
+										SUE CUDDY
+									</dd>
+								</dl>
+								<dl class="col-lg-2 custom-list-group">
+									<dt class="custom-label">agency</dt>
+									<dd class="custom-label-value">
+										auburn ins & reality co, INC.
+									</dd>
+								</dl>
+								<dl class="col-lg-2 custom-list-group">
+									<dt class="custom-label">eff date</dt>
+									<dd class="custom-label-value">
+										12/30/2017
+									</dd>
+								</dl>
+								<dl class="col-lg-2 custom-list-group">
+									<dt class="custom-label">POLICY #</dt>
+									<dd class="custom-label-value">
+										93766373893
+									</dd>
+								</dl>
+							</div>
+						</ng-template>
+					</ngb-panel>
+
+					<ngb-panel id="work-detail">
+						<ng-template ngbPanelHeader let-opened="opened">
+							<button ngbPanelToggle
+								class="btn btn-link d-flex align-items-center justify-content-between w-100">
+								<h5 class="m-0">WORK ITEM DETAIL</h5>
+								<div class="caret-icon">
+									<img src="{{opened ? 'assets/img/icons/caret-up.png' : 'assets/img/icons/caret-down.png'}}"
+										alt="toggle" class="">
+								</div>
+							</button>
+						</ng-template>
+						<ng-template ngbPanelContent>
+							<div class="row">
+								<dl class="col-lg-3 custom-list-group">
+									<dt class="custom-label">PROCESS</dt>
+									<dd class="custom-label-value">
+										FIRST REPORT
+									</dd>
+								</dl>
+								<dl class="col-lg-3 custom-list-group">
+									<dt class="custom-label">STEP</dt>
+									<dd class="custom-label-value">
+										ASSIGN
+									</dd>
+								</dl>
+								<dl class="col-lg-3 custom-list-group">
+									<dt class="custom-label">doc type</dt>
+									<dd class="custom-label-value">
+										property first report
+									</dd>
+								</dl>
+							</div>
+						</ng-template>
+					</ngb-panel>
+
+					<ngb-panel id="claimants">
+						<ng-template ngbPanelHeader let-opened="opened">
+							<button ngbPanelToggle
+								class="btn btn-link d-flex align-items-center justify-content-between w-100">
+								<h5 class="m-0">Policy info</h5>
+								<div class="caret-icon">
+									<img src="{{opened ? 'assets/img/icons/caret-up.png' : 'assets/img/icons/caret-down.png'}}"
+										alt="toggle" class="">
+								</div>
+							</button>
+						</ng-template>
+						<ng-template ngbPanelContent>
+							<div class="dt-body">
+								<div class="dt-action-header">
+									<app-dt-limit [limit]="filePagePayload.limit" (limitChangeAction)="limitChangeAction($event)"></app-dt-limit>
+								</div>
+							</div>
+							<ngx-datatable #fileTable class="material no-shadow" id="inbox-table" [rows]="fileRows"
+								[columns]="fileColumns" [columnMode]="'force'" [headerHeight]="50" [rowHeight]="'auto'"
+								[footerHeight]="50" [scrollbarH]="true" [rowIdentity]="getFileId" [externalPaging]="true"
+								[externalSorting]="true" [limit]="filePagePayload.limit" [count]="fileCount"
+								[offset]="filePagePayload.offset / 10" [loadingIndicator]="isLoading"
+								(page)="onFilePageChange($event)" (sort)="fileTable.offset = filePagePayload.offset / 10"
+								(select)="onFileSelect($event)" [messages]="{emptyMessage: 'No data to display', totalMessage: 'results'}"
+								[selectAllRowsOnPage]="false" [selectionType]="SelectionType.checkbox" [selected]="fileSelected">
+							</ngx-datatable>
+							<ng-template #fileCheckbox let-row="row" let-value="value" let-i="index"></ng-template>
+							<ng-template #fileAction let-row="row" let-value="value" let-i="index">
+								<div class="pointer">
+									<img src="assets/img/icons/document-text.png" alt="file" class="img-fluid">
+								</div>
+							</ng-template>
+						</ng-template>
+					</ngb-panel>
+				</ngb-accordion>
+			</div>
+		</div>
+	</div>
+</div>
