@@ -97,6 +97,12 @@
     text-transform: capitalize;
     min-width: 100px;
 
+    &.btn-blue {
+        background-color: #145A7F;
+        border-color: #145A7F;
+        color: $white-color !important;
+    }
+
     &.btn-danger {
         background-color: $primary-red;
         border-color: $primary-red;

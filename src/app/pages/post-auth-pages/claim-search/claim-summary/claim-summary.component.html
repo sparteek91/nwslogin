@@ -44,7 +44,7 @@
 	<div class="card mt-5">
 		<div class="card-body">
 			<div class="accordion-group">
-				<ngb-accordion #a="ngbAccordion" [activeIds]="['examiners', 'policy', 'claimants', 'work-detail']">
+				<ngb-accordion #a="ngbAccordion" [activeIds]="['examiners', 'policy', 'claimants', 'work-detail', 'file']">
 					<ngb-panel id="examiners">
 						<ng-template ngbPanelHeader let-opened="opened">
 							<button ngbPanelToggle
@@ -127,6 +127,38 @@
 						</ng-template>
 					</ngb-panel>
 
+					<ngb-panel id="claimants">
+						<ng-template ngbPanelHeader let-opened="opened">
+							<button ngbPanelToggle
+								class="btn btn-link d-flex align-items-center justify-content-between w-100">
+								<h5 class="m-0">Claimants</h5>
+								<div class="caret-icon">
+									<img src="{{opened ? 'assets/img/icons/caret-up.png' : 'assets/img/icons/caret-down.png'}}"
+										alt="toggle" class="">
+								</div>
+							</button>
+						</ng-template>
+						<ng-template ngbPanelContent>
+							<ngx-datatable #claimantTable class="material no-shadow" id="claimant-table" [rows]="claimantRows"
+								[columns]="claimantColumns" [columnMode]="'force'" [headerHeight]="50" [rowHeight]="'auto'"
+								[footerHeight]="50" [scrollbarH]="true" [rowIdentity]="getclaimantId"
+								[externalPaging]="true" [externalSorting]="false" [limit]="claimantPagePayload.limit"
+								[count]="claimantCount" [offset]="claimantPagePayload.offset / 10"
+								[loadingIndicator]="isLoadingClaimant" (page)="onClaimantPageChange($event)"
+								(sort)="claimantTable.offset = claimantPagePayload.offset / 10" (select)="onclaimantSelect($event)"
+								[messages]="{emptyMessage: 'No data to display', totalMessage: 'results'}"
+								[selectAllRowsOnPage]="false" [selectionType]="SelectionType.checkbox"
+								[selected]="claimantSelected">
+							</ngx-datatable>
+							<ng-template #claimantCheckbox let-row="row" let-value="value" let-i="index"></ng-template>
+							<!-- <ng-template #claimantAction let-row="row" let-value="value" let-i="index">
+								<div class="pointer">
+									<img src="assets/img/icons/document-text.png" alt="file" class="img-fluid">
+								</div>
+							</ng-template> -->
+						</ng-template>
+					</ngb-panel>
+
 					<ngb-panel id="work-detail">
 						<ng-template ngbPanelHeader let-opened="opened">
 							<button ngbPanelToggle
@@ -159,10 +191,70 @@
 									</dd>
 								</dl>
 							</div>
+							<div class="row">
+								<div class="col-md-6">
+									<form>
+										<div class="form-group row mb-3">
+											<label class="col-sm-2 col-form-label">ACV LOCATION</label>
+											<div class="col-sm-6">
+												<input type="text" class="form-control"
+													placeholder="Enter ACV Location">
+											</div>
+										</div>
+										<div class="form-group row mb-3">
+											<label class="col-sm-2 col-form-label">ASSIGN*</label>
+											<div class="col-sm-6">
+												<select class="form-control">
+													<option value="">-- Select --</option>
+													<option value="EXAM">EXAM</option>
+												</select>
+											</div>
+										</div>
+										<div class="form-group row mb-3">
+											<label class="col-sm-2 col-form-label"></label>
+											<div class="col-sm-6">
+												<select class="form-control">
+													<option value="">-- Select --</option>
+													<option value="ACV">ACV</option>
+												</select>
+											</div>
+											<div class="col-sm-4 d-flex justify-content-center align-items-center">
+												<div class="">
+													<input class="form-check-input" type="checkbox" id="subro">
+													<label class="col-form-label p-0 black" for="subro">
+														SUBRO
+													</label>
+												</div>
+											</div>
+										</div>
+										<div class="form-group row mb-3">
+											<label class="col-sm-2 col-form-label">Route To*</label>
+											<div class="col-sm-6">
+												<select class="form-control">
+													<option value="">-- Select --</option>
+													<option value="COMPLETE STEP">COMPLETE STEP</option>
+												</select>
+											</div>
+										</div>
+										<div class="form-group row mb-3">
+											<label class="col-sm-2 col-form-label"></label>
+											<div class="col-sm-6">
+												<label class="col-form-label mb-0">PRIORITY</label>
+												<div class="col-form-label p-0 black">YES</div>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+							<div class="text-right mb-3">
+								<button class="btn btn-danger mr-2">Next</button>
+								<button class="btn btn-blue mr-2">Save</button>
+								<button class="btn btn-danger-outline">Cancel</button>
+							</div>
 						</ng-template>
 					</ngb-panel>
 
-					<ngb-panel id="claimants">
+					<ngb-panel id="file">
 						<ng-template ngbPanelHeader let-opened="opened">
 							<button ngbPanelToggle
 								class="btn btn-link d-flex align-items-center justify-content-between w-100">
@@ -176,17 +268,20 @@
 						<ng-template ngbPanelContent>
 							<div class="dt-body">
 								<div class="dt-action-header">
-									<app-dt-limit [limit]="filePagePayload.limit" (limitChangeAction)="limitChangeAction($event)"></app-dt-limit>
+									<app-dt-limit [limit]="filePagePayload.limit"
+										(limitChangeAction)="limitChangeAction($event)"></app-dt-limit>
 								</div>
 							</div>
 							<ngx-datatable #fileTable class="material no-shadow" id="inbox-table" [rows]="fileRows"
 								[columns]="fileColumns" [columnMode]="'force'" [headerHeight]="50" [rowHeight]="'auto'"
-								[footerHeight]="50" [scrollbarH]="true" [rowIdentity]="getFileId" [externalPaging]="true"
-								[externalSorting]="true" [limit]="filePagePayload.limit" [count]="fileCount"
-								[offset]="filePagePayload.offset / 10" [loadingIndicator]="isLoading"
-								(page)="onFilePageChange($event)" (sort)="fileTable.offset = filePagePayload.offset / 10"
-								(select)="onFileSelect($event)" [messages]="{emptyMessage: 'No data to display', totalMessage: 'results'}"
-								[selectAllRowsOnPage]="false" [selectionType]="SelectionType.checkbox" [selected]="fileSelected">
+								[footerHeight]="50" [scrollbarH]="true" [rowIdentity]="getFileId"
+								[externalPaging]="true" [externalSorting]="true" [limit]="filePagePayload.limit"
+								[count]="fileCount" [offset]="filePagePayload.offset / 10"
+								[loadingIndicator]="isLoadingFile" (page)="onFilePageChange($event)"
+								(sort)="fileTable.offset = filePagePayload.offset / 10" (select)="onFileSelect($event)"
+								[messages]="{emptyMessage: 'No data to display', totalMessage: 'results'}"
+								[selectAllRowsOnPage]="false" [selectionType]="SelectionType.checkbox"
+								[selected]="fileSelected">
 							</ngx-datatable>
 							<ng-template #fileCheckbox let-row="row" let-value="value" let-i="index"></ng-template>
 							<ng-template #fileAction let-row="row" let-value="value" let-i="index">

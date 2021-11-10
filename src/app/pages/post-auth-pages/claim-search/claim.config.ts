@@ -122,3 +122,109 @@ export function claimFileCloumns(cellTemplate: any = {}) {
     ];
     return columns;
 }
+
+export function claimantsCloumns(cellTemplate: any = {}) {
+    const columns: any = [
+        {
+            prop: '',
+            name: '',
+            sortable: false,
+            draggable: false,
+            canAutoResize: true,
+            width: 50,
+            cellClass: '',
+            headerCheckboxable: true,
+            checkboxable: true,
+            cellTemplate: cellTemplate.checkbox
+        },
+        {
+            prop: 'claimant',
+            name: 'CLAIMANT',
+            sortable: true,
+            draggable: false,
+            canAutoResize: true,
+            cellClass: 'pointer underline',
+        },
+        {
+            prop: 'cms',
+            name: 'CMS',
+            sortable: true,
+            draggable: false,
+            canAutoResize: true,
+            cellClass: 'text-clip',
+        },
+        {
+            prop: 'line',
+            name: 'LINE',
+            sortable: true,
+            draggable: false,
+            canAutoResize: true,
+            cellClass: '',
+        },
+        {
+            prop: 'item',
+            name: 'ITEM',
+            sortable: true,
+            draggable: false,
+            canAutoResize: true,
+            cellClass: '',
+        },
+        {
+            prop: 'cov',
+            name: 'COV',
+            sortable: true,
+            draggable: false,
+            canAutoResize: true,
+            cellClass: '',
+        },
+        {
+            prop: 'exam',
+            name: 'EXAM',
+            sortable: true,
+            draggable: false,
+            canAutoResize: true,
+            cellClass: '',
+        },
+        {
+            prop: 'reserve',
+            name: 'RESERVE',
+            sortable: true,
+            draggable: false,
+            canAutoResize: true,
+            cellClass: '',
+        },
+        {
+            prop: 'paid',
+            name: 'PAID',
+            sortable: true,
+            draggable: false,
+            canAutoResize: true,
+            cellClass: '',
+        },
+        {
+            prop: 'status',
+            name: 'STATUS',
+            sortable: true,
+            draggable: false,
+            canAutoResize: true,
+            cellClass: '',
+        },
+        {
+            prop: 'expense',
+            name: 'EXPENSE',
+            sortable: true,
+            draggable: false,
+            canAutoResize: true,
+            cellClass: '',
+        },
+        {
+            prop: 'recovery',
+            name: 'RECOVERY',
+            sortable: true,
+            draggable: false,
+            canAutoResize: true,
+            cellClass: '',
+        }
+    ];
+    return columns;
+}
