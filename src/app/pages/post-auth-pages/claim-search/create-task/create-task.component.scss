@@ -31,6 +31,9 @@
     }
 
     @media screen and (max-width: 991px) {
+        .res-top-label-space {
+            margin-top: 1.5rem;
+        }
         .custom-card-body-1 {
             .form-check {
                 grid-gap: 5px;
