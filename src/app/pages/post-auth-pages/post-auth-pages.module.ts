@@ -13,6 +13,7 @@ import { ClaimSearchComponent } from './claim-search/claim-search.component';
 import { ClaimSummaryComponent } from './claim-search/claim-summary/claim-summary.component';
 import { InfoModalComponent } from './popups/info-modal/info-modal.component';
 import { DtLimitComponent } from './components/dt-limit/dt-limit.component';
+import { CreateTaskComponent } from './claim-search/create-task/create-task.component';
 
 @NgModule({
 	imports: [
@@ -29,7 +30,8 @@ import { DtLimitComponent } from './components/dt-limit/dt-limit.component';
 		ClaimSearchComponent,
 		InfoModalComponent,
 		DtLimitComponent,
-		ClaimSummaryComponent
+		ClaimSummaryComponent,
+		CreateTaskComponent
 	],
 })
 export class PostAuthModule { }

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ActivatedRouteSnapshot, NavigationEnd, Router } from '@angular/router';
 import { filter, map } from 'rxjs/operators';
 
+import { APP_ROUTES } from '../../../shared/routes';
+
 @Component({
 	selector: 'app-toolbar',
 	templateUrl: './toolbar.component.html',
@@ -10,6 +12,7 @@ import { filter, map } from 'rxjs/operators';
 export class ToolbarComponent implements OnInit {
 	title: string;
 	activatedRoute!: ActivatedRouteSnapshot;
+	routes: any = APP_ROUTES;
 
 	constructor(private route: ActivatedRoute, private router: Router) {
 		this.router.events
@@ -24,11 +27,15 @@ export class ToolbarComponent implements OnInit {
 				})
 			)
 			.subscribe((route: ActivatedRouteSnapshot) => {
-				console.log(route);
+				// console.log(route);
 				this.activatedRoute = route;
 				this.title = route.data.title
 			});
 	}
 
 	ngOnInit(): void {}
+
+	navigate(path: string): void {
+		this.router.navigate([path]);
+	}
 }

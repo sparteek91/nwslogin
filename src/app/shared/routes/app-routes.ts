@@ -10,5 +10,6 @@ export class APP_ROUTES {
 	//* Post Auth Layoyt */
 	public static inbox: string = 'inbox';
 	public static claim: string = 'claim-search';
+	public static createTask: string = 'create-task';
 	public static profile: string = 'profile';
 }

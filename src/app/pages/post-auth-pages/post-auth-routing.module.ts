@@ -4,6 +4,7 @@ import { Routes, RouterModule } from "@angular/router";
 import { InboxComponent } from './inbox/inbox.component';
 import { ClaimSearchComponent } from './claim-search/claim-search.component';
 import { ClaimSummaryComponent } from './claim-search/claim-summary/claim-summary.component';
+import { CreateTaskComponent } from './claim-search/create-task/create-task.component';
 
 import { APP_ROUTES } from "../../shared/routes";
 
@@ -27,6 +28,13 @@ const routes: Routes = [
 		component: ClaimSummaryComponent,
 		data: {
 			title: "Claim Summary",
+		},
+	},
+	{
+		path: APP_ROUTES.createTask,
+		component: CreateTaskComponent,
+		data: {
+			title: "Create Task",
 		},
 	}
 ];

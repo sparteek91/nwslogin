@@ -801,3 +801,30 @@ input[type="number"] {
 		font-weight: 500;
 	}
 }
+
+.custom-card-1 {
+	border: 1.2px solid #c1c1c1;
+	box-sizing: border-box;
+	border-radius: 15px;
+
+	.title {
+		background: #e3eef3;
+		// border-radius: 15px;
+		border-top-left-radius: 15px;
+		border-top-right-radius: 15px;
+		padding: 15px;
+
+		h5 {
+			font-weight: bold;
+			font-size: 12px;
+			line-height: 16px;
+			letter-spacing: 0.05em;
+			text-transform: uppercase;
+			color: #145a7f;
+		}
+	}
+
+	.custom-card-body-1 {
+		padding: 15px;
+	}
+}

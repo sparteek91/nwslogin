@@ -1,7 +1,9 @@
 import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { DatatableComponent, SelectionType, TableColumn } from '@swimlane/ngx-datatable';
 
 import { claimFileCloumns, claimantsCloumns } from '../claim.config';
+import { GlobalService } from '../../../../shared/services/global.service';
 
 @Component({
 	selector: 'app-claim-summary',
@@ -40,6 +42,8 @@ export class ClaimSummaryComponent implements OnInit {
 	isLoadingClaimant: boolean = true;
 
 	SelectionType = SelectionType;
+
+	constructor(private router: Router, private gs: GlobalService) { }
 
 	ngOnInit(): void {
 		this.createColumns();

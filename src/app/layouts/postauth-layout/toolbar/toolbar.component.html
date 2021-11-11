@@ -12,7 +12,11 @@
                     <button class="btn btn-white-outline mr-3">Create PDF</button>
                     <button class="btn btn-white-outline mr-3">Print/Fax</button>
                     <button class="btn btn-white-outline mr-3">Create Note</button>
-                    <button class="btn btn-white">+ Create Task</button>
+                    <button class="btn btn-white" (click)="navigate(routes.createTask)">+ Create Task</button>
+                </ng-container>
+                <ng-container *ngIf="activatedRoute.data.title === 'Create Task'">
+                    <button class="btn btn-white-outline mr-3" (click)="navigate(routes.claim)">Cancel</button>
+                    <button class="btn btn-white">Next</button>
                 </ng-container>
             </div>
         </div>
