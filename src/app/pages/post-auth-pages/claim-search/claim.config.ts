@@ -53,6 +53,14 @@ export function claimColumns(cellTemplate: any = {}) {
             cellClass: '',
         },
         {
+            prop: 'agency_nname',
+            name: 'AGENCY Name',
+            sortable: true,
+            draggable: false,
+            canAutoResize: true,
+            cellClass: '',
+        },
+        {
             prop: 'agency_no',
             name: 'AGENCY #',
             sortable: true,

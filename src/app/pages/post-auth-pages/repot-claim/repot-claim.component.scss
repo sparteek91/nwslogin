@@ -1,0 +1,35 @@
+.report-claim {
+    .form-group {
+        display: flex;
+        gap: 50px;
+
+        input[type=date] {
+            width: 215px;
+        }
+
+        ::ng-deep {
+            .ngx-timepicker {
+                border-bottom: 1px solid rgb(112 112 112);
+                align-items: flex-end;
+                padding-bottom: 3px;
+                height: auto;
+
+                .period-control__button {
+                    &:focus {
+                        &::after {
+                            height: 0;
+                        }
+                    }
+                }
+
+                .period-selector__button--active {
+                    color: #1f5985;
+                }
+
+                .ngx-timepicker__control--second {
+                    display: none;
+                }
+            }
+        }
+    }
+}

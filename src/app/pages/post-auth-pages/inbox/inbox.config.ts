@@ -13,12 +13,20 @@ export function inboxColumns(cellTemplate: any = {}) {
             cellTemplate: cellTemplate.checkbox
         },
         {
+            prop: 'claim_no',
+            name: 'CLAIM #',
+            sortable: true,
+            draggable: false,
+            canAutoResize: true,
+            cellClass: 'pointer underline',
+        },
+        {
             prop: 'item',
             name: 'ITEM',
             sortable: true,
             draggable: false,
             canAutoResize: true,
-            cellClass: 'pointer underline',
+            cellClass: 'pointer',
         },
         {
             prop: 'insured',
@@ -29,24 +37,8 @@ export function inboxColumns(cellTemplate: any = {}) {
             cellClass: 'text-clip',
         },
         {
-            prop: 'claim_no',
-            name: 'CLAIM #',
-            sortable: true,
-            draggable: false,
-            canAutoResize: true,
-            cellClass: '',
-        },
-        {
             prop: 'policy_no',
             name: 'POLICY #',
-            sortable: true,
-            draggable: false,
-            canAutoResize: true,
-            cellClass: '',
-        },
-        {
-            prop: 'agenct_no',
-            name: 'AGENCY #',
             sortable: true,
             draggable: false,
             canAutoResize: true,

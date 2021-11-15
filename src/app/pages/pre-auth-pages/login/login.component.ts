@@ -64,8 +64,9 @@ export class LoginComponent implements OnInit {
 	 * @description: Init the login form
 	 */
 	private intiForm(): void {
+		// Validators.pattern(/^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/)
 		this.form = new FormGroup({
-			email: new FormControl('', [Validators.required, Validators.pattern(/^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/)]),
+			email: new FormControl('', [Validators.required]),
 			password: new FormControl('', [Validators.required]),
 		}, { 'updateOn': 'change' });
 	}

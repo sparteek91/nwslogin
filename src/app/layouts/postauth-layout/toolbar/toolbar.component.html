@@ -7,6 +7,9 @@
                 </div>
             </div>
             <div class="action-wrapper">
+                <ng-container *ngIf="activatedRoute.data.title === 'Inbox'">
+                    <button class="btn btn-white" (click)="navigate(routes.reportClaim)">Report a Claim</button>
+                </ng-container>
                 <ng-container *ngIf="activatedRoute.data.title === 'Claim Summary'">
                     <button class="btn btn-white-outline mr-3">Close Claim</button>
                     <button class="btn btn-white-outline mr-3">Create PDF</button>

@@ -17,7 +17,7 @@ export class ClaimSearchComponent implements OnInit {
 	public columns: TableColumn[] = [];
 	@ViewChild('checkbox', { static: false }) public checkbox!: TemplateRef<any>;
 	pagePayload: any = {
-		limit: 10,
+		limit: 50,
 		page: 1,
 		offset: 0,
 	};
@@ -61,18 +61,18 @@ export class ClaimSearchComponent implements OnInit {
 		this.isLoading = true;
 		setTimeout(() => {
 			this.tempRow = [
-				{ claim_no: 'C863789031', policy_no: '86G737GG74', agency_no: '10/12/2021', loss_date: '29/01/2021', business_name: 'ALBERT, SALVATORE J JR', state: 'MA' },
-				{ claim_no: 'C863789032', policy_no: '86G737GG74', agency_no: '10/12/2021', loss_date: '29/01/2021', business_name: 'ALBERT, SALVATORE J JR', state: 'MA' },
-				{ claim_no: 'C863789033', policy_no: '86G737GG74', agency_no: '10/12/2021', loss_date: '29/01/2021', business_name: 'ALBERT, SALVATORE J JR', state: 'MA' },
-				{ claim_no: 'C863789043', policy_no: '86G737GG74', agency_no: '10/12/2021', loss_date: '29/01/2021', business_name: 'ALBERT, SALVATORE J JR', state: 'MA' },
-				{ claim_no: 'C863789053', policy_no: '86G737GG74', agency_no: '10/12/2021', loss_date: '29/01/2021', business_name: 'ALBERT, SALVATORE J JR', state: 'MA' },
-				{ claim_no: 'C863789073', policy_no: '86G737GG74', agency_no: '10/12/2021', loss_date: '29/01/2021', business_name: 'ALBERT, SALVATORE J JR', state: 'MA' },
-				{ claim_no: 'C863768903', policy_no: '86G737GG74', agency_no: '10/12/2021', loss_date: '29/01/2021', business_name: 'ALBERT, SALVATORE J JR', state: 'MA' },
-				{ claim_no: 'C86378e903', policy_no: '86G737GG74', agency_no: '10/12/2021', loss_date: '29/01/2021', business_name: 'ALBERT, SALVATORE J JR', state: 'MA' },
-				{ claim_no: 'C863789803', policy_no: '86G737GG74', agency_no: '10/12/2021', loss_date: '29/01/2021', business_name: 'ALBERT, SALVATORE J JR', state: 'MA' },
-				{ claim_no: 'C863789003', policy_no: '86G737GG74', agency_no: '10/12/2021', loss_date: '29/01/2021', business_name: 'ALBERT, SALVATORE J JR', state: 'MA' },
-				{ claim_no: 'C86r378903', policy_no: '86G737GG74', agency_no: '10/12/2021', loss_date: '29/01/2021', business_name: 'ALBERT, SALVATORE J JR', state: 'MA' },
-				{ claim_no: 'C8637834903', policy_no: '86G737GG74', agency_no: '10/12/2021', loss_date: '29/01/2021', business_name: 'ALBERT, SALVATORE J JR', state: 'MA' },
+				{ claim_no: 'C863789031', policy_no: '86G737GG74', agency_nname: 'Test Name', agency_no: '20576', loss_date: '01/29/2021', business_name: 'ALBERT, SALVATORE J JR', state: 'MA' },
+				{ claim_no: 'C863789032', policy_no: '86G737GG74', agency_nname: 'Test Name', agency_no: '20576', loss_date: '01/29/2021', business_name: 'ALBERT, SALVATORE J JR', state: 'MA' },
+				{ claim_no: 'C863789033', policy_no: '86G737GG74', agency_nname: 'Test Name', agency_no: '20576', loss_date: '01/29/2021', business_name: 'ALBERT, SALVATORE J JR', state: 'MA' },
+				{ claim_no: 'C863789043', policy_no: '86G737GG74', agency_nname: 'Test Name', agency_no: '20576', loss_date: '01/29/2021', business_name: 'ALBERT, SALVATORE J JR', state: 'MA' },
+				{ claim_no: 'C863789053', policy_no: '86G737GG74', agency_nname: 'Test Name', agency_no: '20576', loss_date: '01/29/2021', business_name: 'ALBERT, SALVATORE J JR', state: 'MA' },
+				{ claim_no: 'C863789073', policy_no: '86G737GG74', agency_nname: 'Test Name', agency_no: '20576', loss_date: '01/29/2021', business_name: 'ALBERT, SALVATORE J JR', state: 'MA' },
+				{ claim_no: 'C863768903', policy_no: '86G737GG74', agency_nname: 'Test Name', agency_no: '20576', loss_date: '01/29/2021', business_name: 'ALBERT, SALVATORE J JR', state: 'MA' },
+				{ claim_no: 'C86378e903', policy_no: '86G737GG74', agency_nname: 'Test Name', agency_no: '20576', loss_date: '01/29/2021', business_name: 'ALBERT, SALVATORE J JR', state: 'MA' },
+				{ claim_no: 'C863789803', policy_no: '86G737GG74', agency_nname: 'Test Name', agency_no: '20576', loss_date: '01/29/2021', business_name: 'ALBERT, SALVATORE J JR', state: 'MA' },
+				{ claim_no: 'C863789003', policy_no: '86G737GG74', agency_nname: 'Test Name', agency_no: '20576', loss_date: '01/29/2021', business_name: 'ALBERT, SALVATORE J JR', state: 'MA' },
+				{ claim_no: 'C86r378903', policy_no: '86G737GG74', agency_nname: 'Test Name', agency_no: '20576', loss_date: '01/29/2021', business_name: 'ALBERT, SALVATORE J JR', state: 'MA' },
+				{ claim_no: 'C8637834903', policy_no: '86G737GG74', agency_nname: 'Test Name', agency_no: '20576', loss_date: '01/29/2021', business_name: 'ALBERT, SALVATORE J JR', state: 'MA' },
 			];
 			this.rows = [...this.tempRow];
 			this.count = this.rows.length;

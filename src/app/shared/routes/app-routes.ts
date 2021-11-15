@@ -12,4 +12,5 @@ export class APP_ROUTES {
 	public static claim: string = 'claim-search';
 	public static createTask: string = 'create-task';
 	public static profile: string = 'profile';
+	public static reportClaim: string = 'report-claim';
 }
