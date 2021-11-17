@@ -21,6 +21,14 @@
                     <button class="btn btn-white-outline mr-3" (click)="navigate(routes.claim)">Cancel</button>
                     <button class="btn btn-white">Next</button>
                 </ng-container>
+                <ng-container *ngIf="activatedRoute.data.title === 'Report a Claim'">
+                    <button class="btn btn-white-outline mr-3">Policy Search</button>
+                    <button class="btn btn-white" (click)="validateForm()">Proceed</button>
+                </ng-container>
+                <ng-container *ngIf="activatedRoute.data.title === 'Report a Claim - Property'">
+                    <button class="btn btn-white-outline mr-3">Cancel FNOL</button>
+                    <button class="btn btn-white">Proceed</button>
+                </ng-container>
             </div>
         </div>
     </div>

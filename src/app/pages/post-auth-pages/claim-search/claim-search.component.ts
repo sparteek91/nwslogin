@@ -75,12 +75,13 @@ export class ClaimSearchComponent implements OnInit {
 		}
 		this.isLoading = true;
 		const url: string = ApiRoutes.claim + searchText;
-		// this.tempRow = [
-		// 	{ CLAIM_NUMBER: 'C2066577', NAME1:'test name', LOSS_DATE: '01-28-2021', POLICY_NUMBER: 'uyuy7', STATE_CD: 'MA', AGENCY_NAME: 'jhgjhg', AGENCY_NUMBER: 'uguyg67' }
-		// ];
-		// this.rows = [...this.tempRow];
-		// this.count = 1;
-		// this.isLoading = false;
+		this.tempRow = [
+			{ CLAIM_NUMBER: 'C2066577', NAME1:'test name', LOSS_DATE: '01-28-2021', POLICY_NUMBER: 'uyuy7', STATE_CD: 'MA', AGENCY_NAME: 'jhgjhg', AGENCY_NUMBER: 'uguyg67' }
+		];
+		this.rows = [...this.tempRow];
+		this.count = 1;
+		this.isLoading = false;
+		return
 		this.tempRow = [];
 		this.rows = [];
 		this.count = 0;

@@ -3,6 +3,7 @@ import { ActivatedRoute, ActivatedRouteSnapshot, NavigationEnd, Router } from '@
 import { filter, map } from 'rxjs/operators';
 
 import { APP_ROUTES } from '../../../shared/routes';
+import { GlobalService } from '../../../shared/services/global.service';
 
 @Component({
 	selector: 'app-toolbar',
@@ -14,7 +15,7 @@ export class ToolbarComponent implements OnInit {
 	activatedRoute!: ActivatedRouteSnapshot;
 	routes: any = APP_ROUTES;
 
-	constructor(private route: ActivatedRoute, private router: Router) {
+	constructor(private route: ActivatedRoute, private router: Router, private gs: GlobalService) {
 		this.router.events
 			.pipe(
 				filter(event => event instanceof NavigationEnd),
@@ -37,5 +38,9 @@ export class ToolbarComponent implements OnInit {
 
 	navigate(path: string): void {
 		this.router.navigate([path]);
+	}
+
+	validateForm(): void {
+		this.gs.reportClaimProceed(true);
 	}
 }

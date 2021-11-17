@@ -16,6 +16,7 @@ import { InfoModalComponent } from './popups/info-modal/info-modal.component';
 import { DtLimitComponent } from './components/dt-limit/dt-limit.component';
 import { CreateTaskComponent } from './claim-search/create-task/create-task.component';
 import { RepotClaimComponent } from './repot-claim/repot-claim.component';
+import { ReportClaimDetailComponent } from './repot-claim/report-claim-detail/report-claim-detail.component';
 
 @NgModule({
 	imports: [
@@ -35,7 +36,8 @@ import { RepotClaimComponent } from './repot-claim/repot-claim.component';
 		DtLimitComponent,
 		ClaimSummaryComponent,
 		CreateTaskComponent,
-  RepotClaimComponent
+		RepotClaimComponent,
+		ReportClaimDetailComponent
 	],
 })
 export class PostAuthModule { }

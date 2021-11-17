@@ -6,6 +6,7 @@ import { ClaimSearchComponent } from './claim-search/claim-search.component';
 import { ClaimSummaryComponent } from './claim-search/claim-summary/claim-summary.component';
 import { CreateTaskComponent } from './claim-search/create-task/create-task.component';
 import { RepotClaimComponent } from './repot-claim/repot-claim.component';
+import { ReportClaimDetailComponent } from './repot-claim/report-claim-detail/report-claim-detail.component';
 
 import { APP_ROUTES } from "../../shared/routes";
 
@@ -43,6 +44,13 @@ const routes: Routes = [
 		component: RepotClaimComponent,
 		data: {
 			title: "Report a Claim",
+		},
+	},
+	{
+		path: APP_ROUTES.reportClaim + '/:id',
+		component: ReportClaimDetailComponent,
+		data: {
+			title: "Report a Claim - Property",
 		},
 	}
 ];
