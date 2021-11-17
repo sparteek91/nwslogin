@@ -8,8 +8,8 @@ export function nullable() {
 	return { transform: (value: any) => value ? value : 'NA' };
 }
 
-export function formatDate() {
-    return { transform: (value: any) => value ? new DatePipe('en-US').transform(value, 'dd-MMM-yyyy') : 'NA' };
+export function formatDate(format: string) {
+    return { transform: (value: any) => value ? new DatePipe('en-US').transform(value, format) : 'NA' };
 }
 
 export function formatTime() {

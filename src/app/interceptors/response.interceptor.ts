@@ -31,7 +31,8 @@ export class ResponseInterceptor implements HttpInterceptor {
     }
 
     private errorHandler(error: HttpErrorResponse, type: string = 'error') {
-        const err: string = this.getError(error);
+        // const err: string = this.getError(error);
+        console.log(error)
         switch (error.status) {
             case 401: {
                 this.notifier('Access token expired', type);
@@ -39,37 +40,21 @@ export class ResponseInterceptor implements HttpInterceptor {
                 break;
             }
             case 400: {
-                this.notifier(err, type);
+                this.notifier('err', type);
                 break;
             }
             case 404: {
-                this.notifier(err, type);
+                this.notifier('err', type);
                 break;
             }
             case 500: {
-                this.notifier(err, type);
+                this.notifier('err', type);
                 break;
             }
             case 0: {
                 this.notifier('Seems there is some problem with the server. Try later!', type);
                 break;
             }
-        }
-    }
-
-    getError(error: HttpErrorResponse) {
-        if (error.error.errors.field_errors) {
-            if (typeof(error.error.errors.field_errors[0]) === 'string') {
-                return error.error.errors.field_errors[0];
-            } else if (typeof(error.error.errors.field_errors[0]) === 'object' && error.error.errors.field_errors.length) {
-                const keys: string[] = Object.keys(error.error.errors.field_errors[0]);
-                const key: string = keys[0];
-                console.log(error.error.errors.field_errors[0][key])
-                return error.error.errors.field_errors[0][key];
-            }
-
-        } else if (error.error.errors.non_field_errors) {
-            return error.error.errors.non_field_errors.raw_message[0];
         }
     }
 

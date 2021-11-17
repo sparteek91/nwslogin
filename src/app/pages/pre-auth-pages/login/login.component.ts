@@ -3,9 +3,11 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 
+
 import { APP_ROUTES, ApiRoutes } from '../../../shared/routes';
 import { ToastService } from '../../../shared/services/toastr.service';
 import { AuthService } from '../../../shared/services/auth.service';
+import { DataService } from '../../../shared/services/data.service';
 
 @Component({
 	selector: 'app-login',
@@ -47,7 +49,7 @@ export class LoginComponent implements OnInit {
 		nav: false
 	}
 
-	constructor(private auth: AuthService, private router: Router, private toastr: ToastService) { }
+	constructor(private ds: DataService, private auth: AuthService, private router: Router, private toastr: ToastService) { }
 
 	ngOnInit(): void {
 		this.intiForm();
@@ -66,8 +68,11 @@ export class LoginComponent implements OnInit {
 	private intiForm(): void {
 		// Validators.pattern(/^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/)
 		this.form = new FormGroup({
-			email: new FormControl('', [Validators.required]),
+			userid: new FormControl('', [Validators.required]),
 			password: new FormControl('', [Validators.required]),
+			// userid: new FormControl('mdeepthimahanti', [Validators.required]),
+			// password: new FormControl('!MDw3Lc0m32N&D2021!', [Validators.required]),
+			old_ticket: new FormControl(Math.floor(100000 + Math.random() * 900000)),
 		}, { 'updateOn': 'change' });
 	}
 
@@ -80,12 +85,15 @@ export class LoginComponent implements OnInit {
 			return;
 		}
 		this.isSubmitting = false;
-		this.auth.login(this.form.value);
-		// this.auth.loginViaPassword(ApiRoutes.loginViaPassword, this.form.value).subscribe((res: any) => {
-		// 	if (!!res && res.access_token) {
-		// 		// navigate to 
-		// 		this.router.navigate([this.routes.dashboard]);
-		// 	}
-		// }, err => console.log(err));
+		const url: string = this.ds.formUrlParam(ApiRoutes.login, this.form.value);
+		this.auth.login(url, this.form.value);
+		// console.log(url);
+		// this.auth.login(url).subscribe((res: any) => {
+		// 	console.log(res);
+		// 	// if (!!res && res.access_token) {
+		// 	// 	// navigate to 
+		// 	// 	// this.router.navigate([this.routes.inbox]);
+		// 	// }
+		// }, (err: any) => console.log(err));
 	}
 }

@@ -38,10 +38,9 @@
 						<form class="form-signin" [formGroup]="form">
 							<div class="form-label-group mb-4">
 								<label class="form-label">Username</label>
-								<input type="email" class="form-control" formControlName="email">
-								<div *ngIf="isSubmitting && formData.email.errors" class="invalid-feedback">
-									<div *ngIf="formData.email.errors.required">*Email is required.</div>
-									<div *ngIf="formData.email.errors.pattern">*Invalid email.</div>
+								<input type="text" class="form-control" formControlName="userid">
+								<div *ngIf="isSubmitting && formData.userid.errors" class="invalid-feedback">
+									<div *ngIf="formData.userid.errors.required">*User ID is required.</div>
 								</div>
 							</div>
 							<div class="form-label-group mb-4">

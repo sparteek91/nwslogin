@@ -1,9 +1,13 @@
-import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { DatatableComponent, SelectionType, TableColumn } from '@swimlane/ngx-datatable';
 
 import { claimColumns } from './claim.config';
-import { APP_ROUTES } from '../../../shared/routes';
+import { APP_ROUTES, ApiRoutes } from '../../../shared/routes';
+import { fromEvent } from 'rxjs';
+import { DataService } from 'src/app/shared/services/data.service';
+import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
+import { ToastService } from 'src/app/shared/services/toastr.service';
 
 @Component({
 	selector: 'app-claim-search',
@@ -13,6 +17,7 @@ import { APP_ROUTES } from '../../../shared/routes';
 export class ClaimSearchComponent implements OnInit {
 	tempRow: any[] = [];
 	rows: any[] = [];
+	@ViewChild('claimSearch') claimSearch: ElementRef;
 	@ViewChild(DatatableComponent, { static: false }) table!: DatatableComponent;
 	public columns: TableColumn[] = [];
 	@ViewChild('checkbox', { static: false }) public checkbox!: TemplateRef<any>;
@@ -22,14 +27,22 @@ export class ClaimSearchComponent implements OnInit {
 		offset: 0,
 	};
 	count!: number;
-	isLoading: boolean = true;
+	isLoading: boolean = false;
 	SelectionType = SelectionType;
 	selected: any[] = [];
 
-	constructor(private router: Router) { }
+	constructor(private router: Router, private ds: DataService, private toastr: ToastService) { }
 
 	ngOnInit(): void {
 		this.createColumns();
+	}
+
+	ngAfterViewInit(): void {
+		setTimeout(() => {
+			const searchEvt = fromEvent(this.claimSearch.nativeElement, "keyup").pipe(debounceTime(750), distinctUntilChanged()).subscribe((data: any) => {
+				this.claimList(this.claimSearch.nativeElement.value)
+			});
+		});
 	}
 
 	/**
@@ -50,34 +63,41 @@ export class ClaimSearchComponent implements OnInit {
 			};
 			this.columns = [];
 			this.columns = claimColumns(cellTemplate);
-			this.claimList();
 		});
 	}
 
 	/**
 	 * @description: Get the claim list from BE
 	 */
-	private claimList(): void {
+	private claimList(searchText: string): void {
+		if (!searchText) {
+			return;
+		}
 		this.isLoading = true;
-		setTimeout(() => {
-			this.tempRow = [
-				{ claim_no: 'C863789031', policy_no: '86G737GG74', agency_nname: 'Test Name', agency_no: '20576', loss_date: '01/29/2021', business_name: 'ALBERT, SALVATORE J JR', state: 'MA' },
-				{ claim_no: 'C863789032', policy_no: '86G737GG74', agency_nname: 'Test Name', agency_no: '20576', loss_date: '01/29/2021', business_name: 'ALBERT, SALVATORE J JR', state: 'MA' },
-				{ claim_no: 'C863789033', policy_no: '86G737GG74', agency_nname: 'Test Name', agency_no: '20576', loss_date: '01/29/2021', business_name: 'ALBERT, SALVATORE J JR', state: 'MA' },
-				{ claim_no: 'C863789043', policy_no: '86G737GG74', agency_nname: 'Test Name', agency_no: '20576', loss_date: '01/29/2021', business_name: 'ALBERT, SALVATORE J JR', state: 'MA' },
-				{ claim_no: 'C863789053', policy_no: '86G737GG74', agency_nname: 'Test Name', agency_no: '20576', loss_date: '01/29/2021', business_name: 'ALBERT, SALVATORE J JR', state: 'MA' },
-				{ claim_no: 'C863789073', policy_no: '86G737GG74', agency_nname: 'Test Name', agency_no: '20576', loss_date: '01/29/2021', business_name: 'ALBERT, SALVATORE J JR', state: 'MA' },
-				{ claim_no: 'C863768903', policy_no: '86G737GG74', agency_nname: 'Test Name', agency_no: '20576', loss_date: '01/29/2021', business_name: 'ALBERT, SALVATORE J JR', state: 'MA' },
-				{ claim_no: 'C86378e903', policy_no: '86G737GG74', agency_nname: 'Test Name', agency_no: '20576', loss_date: '01/29/2021', business_name: 'ALBERT, SALVATORE J JR', state: 'MA' },
-				{ claim_no: 'C863789803', policy_no: '86G737GG74', agency_nname: 'Test Name', agency_no: '20576', loss_date: '01/29/2021', business_name: 'ALBERT, SALVATORE J JR', state: 'MA' },
-				{ claim_no: 'C863789003', policy_no: '86G737GG74', agency_nname: 'Test Name', agency_no: '20576', loss_date: '01/29/2021', business_name: 'ALBERT, SALVATORE J JR', state: 'MA' },
-				{ claim_no: 'C86r378903', policy_no: '86G737GG74', agency_nname: 'Test Name', agency_no: '20576', loss_date: '01/29/2021', business_name: 'ALBERT, SALVATORE J JR', state: 'MA' },
-				{ claim_no: 'C8637834903', policy_no: '86G737GG74', agency_nname: 'Test Name', agency_no: '20576', loss_date: '01/29/2021', business_name: 'ALBERT, SALVATORE J JR', state: 'MA' },
-			];
-			this.rows = [...this.tempRow];
-			this.count = this.rows.length;
+		const url: string = ApiRoutes.claim + searchText;
+		// this.tempRow = [
+		// 	{ CLAIM_NUMBER: 'C2066577', NAME1:'test name', LOSS_DATE: '01-28-2021', POLICY_NUMBER: 'uyuy7', STATE_CD: 'MA', AGENCY_NAME: 'jhgjhg', AGENCY_NUMBER: 'uguyg67' }
+		// ];
+		// this.rows = [...this.tempRow];
+		// this.count = 1;
+		// this.isLoading = false;
+		this.tempRow = [];
+		this.rows = [];
+		this.count = 0;
+		this.ds.get(url).subscribe(res => {
+			if (!!res && res.REF_CUR_ARG) {
+				this.tempRow = res.REF_CUR_ARG;
+				this.rows = [...this.tempRow];
+				this.count = this.rows.length;
+			} 
+			// else if (res['E-001']) {
+			// 	this.toastr.error(res['E-001'], 'Error');
+			// }
 			this.isLoading = false;
-		}, 500);
+		}, err => {
+			console.log(err)
+			this.isLoading = false;
+		});
 	}
 
 	/**
@@ -106,8 +126,8 @@ export class ClaimSearchComponent implements OnInit {
 	 * @param e row event
 	 */
 	onActivate(e: any): void {
-		if (e.type === "click" && e.column["prop"] === "claim_no") {
-			this.router.navigate([APP_ROUTES.claim, e.row.claim_no]);
+		if (e.type === "click" && e.column["prop"] === "CLAIM_NUMBER") {
+			this.router.navigate([APP_ROUTES.claim, e.row.CLAIM_NUMBER]);
 		}
 	}
 }

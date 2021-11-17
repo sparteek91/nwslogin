@@ -27,12 +27,13 @@ export class AuthService {
 		});
 	}
 
-	public login(payload: any) {
-		// return this.http.post<any>(url, payload).pipe(map((data: any) => {
-		//     if (!!data && data.access_token) {
-		//         this.token = data.access_token;
-		// 		this.ls.setItem('nws-token', JSON.stringify(data));
-		//     }
+	public login(url: string, payload: any) {
+		// return this.http.get<any>(url).pipe(map((data: any) => {
+		// 	console.log(data)
+		//     // if (!!data && data.access_token) {
+		//     //     this.token = data.access_token;
+		// 	// 	this.ls.setItem('nws-token', JSON.stringify(data));
+		//     // }
 		//     return data;
 		// }));
 		if (!!payload) {

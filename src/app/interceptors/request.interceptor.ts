@@ -17,8 +17,6 @@ export class RequestInterceptor implements HttpInterceptor {
 		request = request.clone({
 			setHeaders: {
 				Authorization: token,
-				'Client-Id': environment.clientId,
-				'Client-Secret': environment.clientSecret
 			}
 		});
 		// }

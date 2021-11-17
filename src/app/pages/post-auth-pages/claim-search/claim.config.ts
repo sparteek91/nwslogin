@@ -1,3 +1,5 @@
+import { formatDate } from '../../../shared/utility';
+
 export function claimColumns(cellTemplate: any = {}) {
     const columns: any = [
         {
@@ -13,7 +15,7 @@ export function claimColumns(cellTemplate: any = {}) {
             cellTemplate: cellTemplate.checkbox
         },
         {
-            prop: 'claim_no',
+            prop: 'CLAIM_NUMBER',
             name: 'CLAIM #',
             sortable: true,
             draggable: false,
@@ -21,7 +23,7 @@ export function claimColumns(cellTemplate: any = {}) {
             cellClass: 'pointer underline',
         },
         {
-            prop: 'business_name',
+            prop: 'NAME1',
             name: 'LAST/BUSINESS NAME',
             sortable: true,
             draggable: false,
@@ -29,15 +31,16 @@ export function claimColumns(cellTemplate: any = {}) {
             cellClass: 'text-clip',
         },
         {
-            prop: 'loss_date',
+            prop: 'LOSS_DATE',
             name: 'LOSS DATE',
             sortable: true,
             draggable: false,
             canAutoResize: true,
             cellClass: '',
+            pipe: formatDate('MM-dd-yyyy')
         },
         {
-            prop: 'policy_no',
+            prop: 'POLICY_NUMBER',
             name: 'POLICY #',
             sortable: true,
             draggable: false,
@@ -45,7 +48,7 @@ export function claimColumns(cellTemplate: any = {}) {
             cellClass: '',
         },
         {
-            prop: 'state',
+            prop: 'STATE_CD',
             name: 'State',
             sortable: true,
             draggable: false,
@@ -53,7 +56,7 @@ export function claimColumns(cellTemplate: any = {}) {
             cellClass: '',
         },
         {
-            prop: 'agency_nname',
+            prop: 'AGENCY_NAME',
             name: 'AGENCY Name',
             sortable: true,
             draggable: false,
@@ -61,7 +64,7 @@ export function claimColumns(cellTemplate: any = {}) {
             cellClass: '',
         },
         {
-            prop: 'agency_no',
+            prop: 'AGENCY_NUMBER',
             name: 'AGENCY #',
             sortable: true,
             draggable: false,
